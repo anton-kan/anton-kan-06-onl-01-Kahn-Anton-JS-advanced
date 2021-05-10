@@ -19,6 +19,10 @@ test('array without anagrams should not change', () => {
   expect(filterAnagrams(['pan', 'ab', 'Kan'])).toStrictEqual(['pan', 'ab', 'Kan']);
 });
 
+test('the filtering should be case-insensitive', () => {
+  expect([['pan'], ['nAp'], ['anP']]).toContainEqual(filterAnagrams(['pan', 'nAp', 'anP']));
+});
+
 test("make sure the function doesn't return strings that didn't exist in the original array", () => {
   expect(filterAnagrams(['pan', 'nap'])).not.toStrictEqual(['anp']);
 });
