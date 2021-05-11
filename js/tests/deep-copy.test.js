@@ -6,16 +6,9 @@ test('object with 1 level and no methods', () => {
     n: 12345,
     b: true,
   };
-  expect(deepCopy(obj)).toStrictEqual(obj);
-});
-
-test('make sure it is a copy and not the same object', () => {
-  const obj = {
-    s: 'string',
-    n: 12345,
-    b: true,
-  };
-  expect(deepCopy(obj)).not.toBe(obj);
+  const copy = deepCopy(obj);
+  expect(copy).toStrictEqual(obj);
+  expect(copy).not.toBe(obj);
 });
 
 test('object with 2 levels and no methods', () => {
@@ -28,7 +21,10 @@ test('object with 2 levels and no methods', () => {
       age: 49,
     },
   };
-  expect(deepCopy(obj)).toStrictEqual(obj);
+  const copy = deepCopy(obj);
+  expect(copy).toStrictEqual(obj);
+  expect(copy).not.toBe(obj);
+  expect(copy.subObject).not.toBe(obj.subObject);
 });
 
 test('object with 1 level and a method', () => {
@@ -40,7 +36,10 @@ test('object with 1 level and a method', () => {
       console.log('Hello world!');
     },
   };
-  expect(deepCopy(obj)).toStrictEqual(obj);
+  const copy = deepCopy(obj);
+  expect(copy).toStrictEqual(obj);
+  expect(copy).not.toBe(obj);
+  expect(copy.sayHi).not.toBe(obj.sayHi);
 });
 
 test('object with 2 levels and 2 methods', () => {
@@ -59,5 +58,10 @@ test('object with 2 levels and 2 methods', () => {
       },
     },
   };
-  expect(deepCopy(obj)).toStrictEqual(obj);
+  const copy = deepCopy(obj);
+  expect(copy).toStrictEqual(obj);
+  expect(copy).not.toBe(obj);
+  expect(copy.subObject).not.toBe(obj.subObject);
+  expect(copy.sayHi).not.toBe(obj.sayHi);
+  expect(copy.subObject.introduceSelf).not.toBe(obj.subObject.introduceSelf);
 });
