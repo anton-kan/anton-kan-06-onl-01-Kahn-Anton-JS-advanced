@@ -6,6 +6,11 @@ function deepCopy(obj) {
     }
     return copy;
   }
+  if (typeof obj === 'function') {
+    const copy = new Function('return ' + obj.toString())();
+    Object.defineProperty(copy, 'name', { value: obj.name });
+    return copy;
+  }
   return obj;
 }
 
