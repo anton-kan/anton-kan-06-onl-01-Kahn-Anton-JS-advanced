@@ -1,14 +1,43 @@
-const array = [1, 2, 3, 4, 5];
+const array = [1, 2, 3, 4, 5, [6, 7], 3, new Date(), 8, 9, 10];
 const methods = [
-  { method: array.map, arguments: [(item) => item * 2] },
-  { method: array.pop, arguments: [] },
+  { method: Array.prototype.concat, args: [['a', 'b', 'c']] },
+  { method: Array.prototype.copyWithin, args: [0, 3, 4] },
+  { method: Array.prototype.entries, args: [] },
+  { method: Array.prototype.every, args: [(item) => item < 4] },
+  { method: Array.prototype.fill, args: [0, 3, 4] },
+  { method: Array.prototype.filter, args: [(item) => item < 4] },
+  { method: Array.prototype.find, args: [(item) => item > 3] },
+  { method: Array.prototype.findIndex, args: [(item) => item > 3] },
+  { method: Array.prototype.flat, args: [] },
+  { method: Array.prototype.flatMap, args: [(item) => [item, item * 2]] },
+  { method: Array.prototype.forEach, args: [(item) => console.log(item)] },
+  { method: Array.prototype.includes, args: [3] },
+  { method: Array.prototype.indexOf, args: [3] },
+  { method: Array.prototype.join, args: [] },
+  { method: Array.prototype.keys, args: [] },
+  { method: Array.prototype.lastIndexOf, args: [3] },
+  { method: Array.prototype.map, args: [(item) => item * 2] },
+  { method: Array.prototype.pop, args: [] },
+  { method: Array.prototype.push, args: [15] },
+  { method: Array.prototype.reduce, args: [(acc, value) => acc + value] },
+  { method: Array.prototype.reduceRight, args: [(acc, value) => acc + value] },
+  { method: Array.prototype.reverse, args: [] },
+  { method: Array.prototype.shift, args: [] },
+  { method: Array.prototype.slice, args: [2, 4] },
+  { method: Array.prototype.some, args: [(item) => item < 4] },
+  { method: Array.prototype.sort, args: [] },
+  { method: Array.prototype.splice, args: [2, 3, 20] },
+  { method: Array.prototype.toLocaleString, args: ['ru'] },
+  { method: Array.prototype.toString, args: [] },
+  { method: Array.prototype.unshift, args: [10] },
+  { method: Array.prototype.values, args: [] },
 ];
 const mutatingMethods = [];
 const nonMutatingMethods = [];
 
-function isMutating(array, method, arguments) {
+function isMutating(array, method, args) {
   const arrayImage = JSON.stringify(array);
-  method.call(array, ...arguments);
+  console.log(method.call(array, ...args));
   return JSON.stringify(array) !== arrayImage;
 }
 
@@ -27,6 +56,8 @@ function fillTable() {
   }
 }
 
-methods.forEach(({method, arguments}) => isMutating(array, method, arguments) ? mutatingMethods.push(method.name) : nonMutatingMethods.push(method.name));
+methods.forEach(({ method, args }) =>
+  isMutating(array, method, args) ? mutatingMethods.push(method.name) : nonMutatingMethods.push(method.name)
+);
 
 fillTable();
