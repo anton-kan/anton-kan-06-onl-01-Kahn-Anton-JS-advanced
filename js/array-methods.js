@@ -37,7 +37,7 @@ const nonMutatingMethods = [];
 
 function isMutating(array, method, args) {
   const arrayImage = JSON.stringify(array);
-  console.log(method.call(array, ...args));
+  method.call(array, ...args);
   return JSON.stringify(array) !== arrayImage;
 }
 
