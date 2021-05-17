@@ -1,4 +1,5 @@
 const deepCopy = require('../deep-copy');
+const deepCompare = require('../deep-compare');
 
 test('object with 1 level and no methods', () => {
   const obj = {
@@ -37,7 +38,7 @@ test('object with 1 level and a method', () => {
     },
   };
   const copy = deepCopy(obj);
-  expect(copy).toEqual(obj);
+  expect(deepCompare(obj, copy)).toBe(true);
   expect(copy).not.toBe(obj);
   expect(copy.sayHi).not.toBe(obj.sayHi);
 });
@@ -59,16 +60,9 @@ test('object with 2 levels and 2 methods', () => {
     },
   };
   const copy = deepCopy(obj);
-  expect(copy).toEqual(obj);
+  expect(deepCompare(obj, copy)).toBe(true);
   expect(copy).not.toBe(obj);
   expect(copy.subObject).not.toBe(obj.subObject);
   expect(copy.sayHi).not.toBe(obj.sayHi);
   expect(copy.subObject.introduceSelf).not.toBe(obj.subObject.introduceSelf);
-});
-
-test('testing toEqual behavior', () => {
-  const func = (a, b) => a + b;
-  const func2 = (a, b) => a + b;
-  Object.defineProperty(func2, 'name', { value: func.name });
-  expect(func2).toEqual(func);
 });
