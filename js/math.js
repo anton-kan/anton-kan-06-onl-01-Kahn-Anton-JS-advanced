@@ -11,8 +11,6 @@ const actionSelectElement = document.querySelector('#action-select');
 const calculateBtnElement = document.querySelector('#calculate-btn');
 const resultInputElement = document.querySelector('#result-input');
 
-calculateBtnElement.addEventListener('click', calculate);
-
 function calculate() {
   const a = +aInputElement.value;
   const b = +bInputElement.value;
@@ -34,6 +32,10 @@ function calculate() {
     case 'discriminant':
       result = discriminant(a, b, c);
       break;
+    default:
+      break;
   }
   resultInputElement.value = result;
 }
+
+calculateBtnElement.addEventListener('click', calculate);
