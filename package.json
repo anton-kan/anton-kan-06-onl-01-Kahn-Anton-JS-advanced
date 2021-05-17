@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "build": "browserify ./js/math.js -o ./js/bundle.js",
     "test": "jest"
   },
   "repository": {
