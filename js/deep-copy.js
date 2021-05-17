@@ -1,10 +1,9 @@
 function deepCopy(obj) {
   if (typeof obj === 'object') {
-    const copy = new Object();
-    for (let key of Object.keys(obj)) {
-      copy[key] = deepCopy(obj[key]);
-    }
-    return copy;
+    return Object.keys(obj).reduce((acc, value) => {
+      acc[value] = deepCopy(obj[value]);
+      return acc;
+    }, new Object());
   }
   if (typeof obj === 'function') {
     const copy = new Function('return ' + obj.toString())();
