@@ -1,5 +1,5 @@
 const array = [1, 2, 3, 4, 5, [6, 7], 3, new Date(), 8, 9, 10];
-const methods = [
+const knownMethodsWithArgs = [
   { method: Array.prototype.concat, args: [['a', 'b', 'c']] },
   { method: Array.prototype.copyWithin, args: [0, 3, 4] },
   { method: Array.prototype.entries, args: [] },
@@ -32,32 +32,35 @@ const methods = [
   { method: Array.prototype.unshift, args: [10] },
   { method: Array.prototype.values, args: [] },
 ];
-const mutatingMethods = [];
-const nonMutatingMethods = [];
 
-function isMutating(array, method, args) {
+const isMutating = (array, method, args) => {
   const arrayImage = JSON.stringify(array);
   method.call(array, ...args);
   return JSON.stringify(array) !== arrayImage;
-}
+};
 
-function fillTable() {
-  const tableElement = document.querySelector('.methods-table');
-  const length = Math.max(mutatingMethods.length, nonMutatingMethods.length);
-  for (let i = 0; i < length; i++) {
-    const rowElement = document.createElement('tr');
-    const mutatingCellElement = document.createElement('td');
-    mutatingCellElement.innerText = mutatingMethods[i] || '';
-    const nonMutatingCellElement = document.createElement('td');
-    nonMutatingCellElement.innerText = nonMutatingMethods[i] || '';
-    rowElement.append(mutatingCellElement);
-    rowElement.append(nonMutatingCellElement);
-    tableElement.append(rowElement);
-  }
-}
+const renderList = (element, array) => {
+  element.innerHTML = array.map((item) => `<li>${item}</li>`).join('');
+};
 
-methods.forEach(({ method, args }) =>
-  isMutating(array, method, args) ? mutatingMethods.push(method.name) : nonMutatingMethods.push(method.name)
+const fillTable = () => {
+  const mutatingListElement = document.querySelector('.mutating-list');
+  const nonMutatingListElement = document.querySelector('.non-mutating-list');
+  const unknownListElement = document.querySelector('.unknown-list');
+
+  renderList(mutatingListElement, mutatingMethodNames);
+  renderList(nonMutatingListElement, nonMutatingMethodNames);
+  renderList(unknownListElement, unknownMethodNames);
+};
+
+const allMethodNames = Object.getOwnPropertyNames(Array.prototype).filter(
+  (property) => typeof Array.prototype[property] === 'function'
 );
+const knownMethodNames = knownMethodsWithArgs.map((item) => item.method.name);
+const unknownMethodNames = allMethodNames.filter((name) => !knownMethodNames.includes(name));
+const mutatingMethodNames = knownMethodsWithArgs
+  .filter(({ method, args }) => isMutating(array, method, args))
+  .map((item) => item.method.name);
+const nonMutatingMethodNames = knownMethodNames.filter((name) => !mutatingMethodNames.includes(name));
 
 fillTable();
