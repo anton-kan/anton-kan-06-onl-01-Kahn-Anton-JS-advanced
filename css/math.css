@@ -1,0 +1,25 @@
+.container {
+  max-width: 1170px;
+  margin: 0 auto;
+}
+
+.input-parameters {
+  display: flex;
+  justify-content: space-between;
+  margin: 25px auto;
+}
+.buttons {
+  display: flex;
+  justify-content: center;
+  margin: 25px auto;
+}
+.results {
+  display: flex;
+  justify-content: center;
+
+  margin: 25px auto;
+}
+
+input {
+  margin-left: 5px;
+}

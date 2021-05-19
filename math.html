@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Math</title>
+    <link rel="stylesheet" href="./css/math.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="input-parameters">
+        <label>a<input type="number" id="a-input" /></label>
+
+        <label>b<input type="number" id="b-input" /></label>
+
+        <label>c<input type="number" id="c-input" /></label>
+
+        <label>
+          Choose action
+          <select name="action" id="action-select">
+            <option>sum</option>
+            <option>subtract</option>
+            <option>multiply</option>
+            <option>divide</option>
+            <option>discriminant</option>
+          </select>
+        </label>
+      </div>
+      <div class="buttons">
+        <button id="calculate-btn">Calculate</button>
+      </div>
+      <div class="results">
+        <label>Result<input type="number" id="result-input" readonly /></label>
+      </div>
+    </div>
+    <script src="./js/bundle.js"></script>
+  </body>
+</html>
