@@ -11,12 +11,12 @@ const actionSelectElement = document.querySelector('#action-select');
 const calculateBtnElement = document.querySelector('#calculate-btn');
 const resultInputElement = document.querySelector('#result-input');
 
-function calculate() {
-  const a = +aInputElement.value;
-  const b = +bInputElement.value;
-  const c = +cInputElement.value;
+const calculate = () => {
+  const a = +aInputElement?.value;
+  const b = +bInputElement?.value;
+  const c = +cInputElement?.value;
   let result;
-  switch (actionSelectElement.value) {
+  switch (actionSelectElement?.value) {
     case 'sum':
       result = sum(a, b);
       break;
@@ -35,7 +35,7 @@ function calculate() {
     default:
       break;
   }
-  resultInputElement.value = result;
-}
+  resultInputElement.value = result || '';
+};
 
 calculateBtnElement.addEventListener('click', calculate);
