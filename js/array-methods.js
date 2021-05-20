@@ -1,3 +1,7 @@
+const toggleTooltip = require('./tooltip');
+
+document.addEventListener('mousemove', toggleTooltip);
+
 const sampleArray = [1, 2, 3, 4, 5, [6, 7], 3, new Date(), 8, 9, 10];
 const knownMethodsWithArgs = [
   { method: Array.prototype.concat, args: [['a', 'b', 'c']] },
@@ -39,10 +43,11 @@ const isMutating = (array, method, args) => {
   return JSON.stringify(array) !== arrayImage;
 };
 
-const renderList = (array, tooltip) => array.map((item) => `<li data-tooltip="${item} is a ${tooltip} method">${item}</li>`).join('');
+const renderList = (array, tooltip) =>
+  array.map((item) => `<li data-tooltip="${item} is a ${tooltip} method">${item}</li>`).join('');
 
 const allMethodNames = Object.getOwnPropertyNames(Array.prototype).filter(
-  (property) => typeof Array.prototype[property] === 'function',
+  (property) => typeof Array.prototype[property] === 'function'
 );
 const knownMethodNames = knownMethodsWithArgs.map((item) => item.method.name);
 const unknownMethodNames = allMethodNames.filter((name) => !knownMethodNames.includes(name));
@@ -50,7 +55,7 @@ const mutatingMethodNames = knownMethodsWithArgs
   .filter(({ method, args }) => isMutating(sampleArray, method, args))
   .map((item) => item.method.name);
 const nonMutatingMethodNames = knownMethodNames.filter(
-  (name) => !mutatingMethodNames.includes(name),
+  (name) => !mutatingMethodNames.includes(name)
 );
 
 const fillTable = () => {

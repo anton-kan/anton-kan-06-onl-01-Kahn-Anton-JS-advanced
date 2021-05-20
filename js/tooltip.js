@@ -14,4 +14,4 @@ const toggleTooltip = (event) => {
   }
 };
 
-document.addEventListener('mousemove', toggleTooltip);
+module.exports = toggleTooltip;

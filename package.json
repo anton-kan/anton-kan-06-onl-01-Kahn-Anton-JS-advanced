@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "browserify ./js/math.js -o ./js/bundle.js",
+    "build:math": "browserify ./js/math.js -o ./js/bundle.js",
+    "build:array-methods": "browserify ./js/array-methods.js -o ./js/bundle.js",
     "test": "jest",
     "lint": "eslint ./js",
     "lint:fix": "eslint ./js --fix",
