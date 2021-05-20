@@ -39,9 +39,7 @@ const isMutating = (array, method, args) => {
   return JSON.stringify(array) !== arrayImage;
 };
 
-const renderList = (array) => {
-  array.map((item) => `<li>${item}</li>`).join('');
-};
+const renderList = (array, tooltip) => array.map((item) => `<li data-tooltip="${item} is a ${tooltip} method">${item}</li>`).join('');
 
 const allMethodNames = Object.getOwnPropertyNames(Array.prototype).filter(
   (property) => typeof Array.prototype[property] === 'function',
@@ -60,9 +58,9 @@ const fillTable = () => {
   const nonMutatingListElement = document.querySelector('.non-mutating-list');
   const unknownListElement = document.querySelector('.unknown-list');
 
-  mutatingListElement.innerHTML = renderList(mutatingMethodNames);
-  nonMutatingListElement.innerHTML = renderList(nonMutatingMethodNames);
-  unknownListElement.innerHTML = renderList(unknownMethodNames);
+  mutatingListElement.innerHTML = renderList(mutatingMethodNames, 'mutating');
+  nonMutatingListElement.innerHTML = renderList(nonMutatingMethodNames, 'non-mutating');
+  unknownListElement.innerHTML = renderList(unknownMethodNames, 'unknown');
 };
 
 fillTable();
