@@ -1,4 +1,4 @@
-const discriminant = require('./discriminant');
+import discriminant from './discriminant';
 
 test('discriminant of the equation x^2-10x+25=0 should equal to 0', () => {
   expect(discriminant(1, -10, 25)).toBe(0);

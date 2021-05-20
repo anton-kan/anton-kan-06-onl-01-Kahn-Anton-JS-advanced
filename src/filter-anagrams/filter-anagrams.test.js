@@ -1,4 +1,4 @@
-const filterAnagrams = require('./filter-anagrams');
+import filterAnagrams from './filter-anagrams';
 
 test('leave any one out of three anagrams', () => {
   expect([['pan'], ['nap'], ['anp']]).toContainEqual(filterAnagrams(['pan', 'nap', 'anp']));

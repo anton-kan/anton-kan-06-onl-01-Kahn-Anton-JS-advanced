@@ -1,6 +1,6 @@
-const multiply = require('../multiply/multiply');
-const subtract = require('../subtract/subtract');
+import multiply from '../multiply/multiply';
+import subtract from '../subtract/subtract';
 
 const discriminant = (a, b, c) => subtract(multiply(b, b), multiply(4, multiply(a, c)));
 
-module.exports = discriminant;
+export default discriminant;

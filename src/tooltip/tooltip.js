@@ -14,4 +14,4 @@ const toggleTooltip = (event) => {
   }
 };
 
-module.exports = toggleTooltip;
+export default toggleTooltip;
