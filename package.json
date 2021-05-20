@@ -4,13 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build:math": "browserify ./js/math.js -o ./js/bundle.js",
-    "build:array-methods": "browserify ./js/array-methods.js -o ./js/bundle.js",
+    "build:math": "browserify ./src/math/math.js -o ./dist/bundle.js",
+    "build:array-methods": "browserify ./src/array-methods/array-methods.js -o ./dist/bundle.js",
     "test": "jest",
-    "lint": "eslint ./js",
-    "lint:fix": "eslint ./js --fix",
-    "prettier": "prettier -c ./js",
-    "prettier:fix": "prettier -w ./js"
+    "lint": "eslint ./src",
+    "lint:fix": "eslint ./src --fix",
+    "prettier": "prettier -c ./src",
+    "prettier:fix": "prettier -w ./src"
   },
   "repository": {
     "type": "git",

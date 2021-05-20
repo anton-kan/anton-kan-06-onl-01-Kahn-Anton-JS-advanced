@@ -1,4 +1,4 @@
-const toggleTooltip = require('./tooltip');
+const toggleTooltip = require('../tooltip/tooltip');
 
 document.addEventListener('mousemove', toggleTooltip);
 
