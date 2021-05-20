@@ -1,8 +1,8 @@
-const sum = require('./sum');
-const subtract = require('./subtract');
-const multiply = require('./multiply');
-const divide = require('./divide');
-const discriminant = require('./discriminant');
+import sum from '../sum/sum';
+import subtract from '../subtract/subtract';
+import multiply from '../multiply/multiply';
+import divide from '../divide/divide';
+import discriminant from '../discriminant/discriminant';
 
 const aInputElement = document.querySelector('#a-input');
 const bInputElement = document.querySelector('#b-input');

@@ -4,4 +4,4 @@ function filterAnagrams(arr) {
   return Array.from(map.values());
 }
 
-module.exports = filterAnagrams;
+export default filterAnagrams;
