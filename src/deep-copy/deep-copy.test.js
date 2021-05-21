@@ -1,5 +1,5 @@
-const deepCopy = require('../deep-copy');
-const deepCompare = require('../deep-compare');
+import deepCopy from './deep-copy';
+import deepCompare from '../deep-compare/deep-compare';
 
 test('object with 1 level and no methods', () => {
   const obj = {
@@ -33,7 +33,8 @@ test('object with 1 level and a method', () => {
     s: 'string',
     n: 12345,
     b: true,
-    sayHi: function () {
+    sayHi() {
+      // eslint-disable-next-line no-console
       console.log('Hello world!');
     },
   };
@@ -48,13 +49,15 @@ test('object with 2 levels and 2 methods', () => {
     s: 'string',
     n: 12345,
     b: true,
-    sayHi: function () {
+    sayHi() {
+      // eslint-disable-next-line no-console
       console.log('Hello world!');
     },
     subObject: {
       name: 'Vasya',
       age: 49,
-      introduceSelf: function (userName) {
+      introduceSelf(userName) {
+        // eslint-disable-next-line no-console
         console.log(`Hi ${userName}! My name is ${this.name} and I'm ${this.age} years old`);
       },
     },

@@ -1,4 +1,5 @@
-const deepCompare = require('../deep-compare');
+/* eslint-disable no-console */
+import deepCompare from './deep-compare';
 
 test('equal objects with 1 level and no methods', () => {
   const obj1 = {
@@ -82,7 +83,7 @@ test('equal objects with 1 level and a method', () => {
     s: 'string',
     n: 12345,
     b: true,
-    sayHi: function () {
+    sayHi() {
       console.log('Hello world!');
     },
   };
@@ -90,7 +91,7 @@ test('equal objects with 1 level and a method', () => {
     s: 'string',
     n: 12345,
     b: true,
-    sayHi: function () {
+    sayHi() {
       console.log('Hello world!');
     },
   };
@@ -103,7 +104,7 @@ test('not equal objects with 1 level and a method', () => {
     s: 'string',
     n: 12345,
     b: true,
-    sayHi: function () {
+    sayHi() {
       console.log('Hello world!');
     },
   };
@@ -111,7 +112,7 @@ test('not equal objects with 1 level and a method', () => {
     s: 'string',
     n: 12345,
     b: true,
-    sayHello: function () {
+    sayHello() {
       console.log('Hello world!');
     },
   };
@@ -124,13 +125,13 @@ test('equal objects with 2 levels and 2 methods', () => {
     s: 'string',
     n: 12345,
     b: true,
-    sayHi: function () {
+    sayHi() {
       console.log('Hello world!');
     },
     subObject: {
       name: 'Vasya',
       age: 49,
-      introduceSelf: function (userName) {
+      introduceSelf(userName) {
         console.log(`Hi ${userName}! My name is ${this.name} and I'm ${this.age} years old`);
       },
     },
@@ -139,13 +140,13 @@ test('equal objects with 2 levels and 2 methods', () => {
     s: 'string',
     n: 12345,
     b: true,
-    sayHi: function () {
+    sayHi() {
       console.log('Hello world!');
     },
     subObject: {
       name: 'Vasya',
       age: 49,
-      introduceSelf: function (userName) {
+      introduceSelf(userName) {
         console.log(`Hi ${userName}! My name is ${this.name} and I'm ${this.age} years old`);
       },
     },
@@ -159,13 +160,13 @@ test('not equal objects with 2 levels and 2 methods', () => {
     s: 'string',
     n: 12345,
     b: true,
-    sayHi: function () {
+    sayHi() {
       console.log('Hello world!');
     },
     subObject: {
       name: 'Vasya',
       age: 49,
-      introduceSelf: function (userName) {
+      introduceSelf(userName) {
         console.log(`Hi ${userName}! My name is ${this.name} and I'm ${this.age} years old`);
       },
     },
@@ -174,13 +175,13 @@ test('not equal objects with 2 levels and 2 methods', () => {
     s: 'string',
     n: 12345,
     b: true,
-    sayHi: function () {
+    sayHi() {
       console.log('Hello world!');
     },
     subObject: {
       name: 'Vasya',
       age: 49,
-      introduceSelf: function (userName) {
+      introduceSelf(userName) {
         // Some extra comment
         console.log(`Hi ${userName}! My name is ${this.name} and I'm ${this.age} years old`);
       },
