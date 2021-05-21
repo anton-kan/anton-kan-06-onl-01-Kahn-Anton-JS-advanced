@@ -14,5 +14,5 @@
     "ecmaVersion": 12
   },
   "plugins": ["react"],
-  "rules": {}
+  "rules": { "linebreak-style": ["error", "unix"] }
 }
