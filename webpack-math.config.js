@@ -2,6 +2,8 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 // eslint-disable-next-line import/no-extraneous-dependencies
 const CopyPlugin = require('copy-webpack-plugin');
+// eslint-disable-next-line import/no-extraneous-dependencies
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const path = require('path');
 
 module.exports = {
@@ -16,5 +18,6 @@ module.exports = {
     new CopyPlugin({
       patterns: [{ from: './src/math/*.css', to: './[name][ext]' }],
     }),
+    new CleanWebpackPlugin(),
   ],
 };
