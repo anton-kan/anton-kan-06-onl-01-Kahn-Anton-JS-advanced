@@ -5,13 +5,14 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const path = require('path');
 
 module.exports = {
+  context: path.resolve(__dirname, 'src'),
   mode: 'production',
-  entry: './src/math/math.js',
+  entry: './math/math.js',
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist'),
   },
-  plugins: [new HtmlWebpackPlugin({ template: './src/math/math.html' }), new CleanWebpackPlugin()],
+  plugins: [new HtmlWebpackPlugin({ template: './math/math.html' }), new CleanWebpackPlugin()],
   module: {
     rules: [
       {
