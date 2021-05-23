@@ -3,6 +3,7 @@ import subtract from '../subtract/subtract';
 import multiply from '../multiply/multiply';
 import divide from '../divide/divide';
 import discriminant from '../discriminant/discriminant';
+import './math.css';
 
 const aInputElement = document.querySelector('#a-input');
 const bInputElement = document.querySelector('#b-input');
