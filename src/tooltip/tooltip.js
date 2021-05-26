@@ -16,6 +16,6 @@ const toggleTooltip = (event) => {
   }
 };
 
-const enableTooltips = () => document.addEventListener('mousemove', toggleTooltip);
+const addTooltipsListener = () => document.addEventListener('mousemove', toggleTooltip);
 
-export default enableTooltips;
+export default addTooltipsListener;

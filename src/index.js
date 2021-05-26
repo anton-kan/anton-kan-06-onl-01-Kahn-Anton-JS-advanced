@@ -1,5 +1,5 @@
 import renderList from './render-list/render-list';
-import enableTooltips from './tooltip/tooltip';
+import addTooltipsListener from './tooltip/tooltip';
 import getArrayMethods from './array-methods/array-methods';
 
 import './index.css';
@@ -17,4 +17,4 @@ const fillLists = () => {
 };
 
 fillLists();
-enableTooltips();
+addTooltipsListener();
