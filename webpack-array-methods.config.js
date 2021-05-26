@@ -1,12 +1,7 @@
-// eslint-disable-next-line import/no-extraneous-dependencies
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-// eslint-disable-next-line import/no-extraneous-dependencies
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-// eslint-disable-next-line import/no-extraneous-dependencies
 const OptimizeCssAssetsWebpackPlugin = require('optimize-css-assets-webpack-plugin');
-// eslint-disable-next-line import/no-extraneous-dependencies
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-// eslint-disable-next-line import/no-extraneous-dependencies
 const TerserWebpackPlugin = require('terser-webpack-plugin');
 const path = require('path');
 

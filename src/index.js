@@ -7,13 +7,13 @@ import './index.css';
 const fillLists = () => {
   const methods = getArrayMethods();
 
-  const mutatingListElement = document.querySelector('.mutating-list');
-  const nonMutatingListElement = document.querySelector('.non-mutating-list');
-  const unknownListElement = document.querySelector('.unknown-list');
+  const mutatingListContainer = document.querySelector('.mutating-container');
+  const nonMutatingListContainer = document.querySelector('.non-mutating-container');
+  const unknownListContainer = document.querySelector('.unknown-container');
 
-  mutatingListElement.innerHTML = renderList(methods.mutating, 'mutating');
-  nonMutatingListElement.innerHTML = renderList(methods.nonMutating, 'non-mutating');
-  unknownListElement.innerHTML = renderList(methods.unknown, 'unknown');
+  mutatingListContainer.append(renderList(methods.mutating, 'mutating'));
+  nonMutatingListContainer.append(renderList(methods.nonMutating, 'non-mutating'));
+  unknownListContainer.append(renderList(methods.unknown, 'unknown'));
 };
 
 fillLists();

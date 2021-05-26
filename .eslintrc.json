@@ -23,6 +23,10 @@
         "objects": "always-multiline",
         "functions": "never"
       }
+    ],
+    "import/no-extraneous-dependencies": [
+      "error",
+      { "devDependencies": ["**/webpack*.config.js", "**/*.test.js", "**/*.spec.js"] }
     ]
   }
 }

@@ -1,3 +1,8 @@
-const renderItem = (i, tooltip) => `<li data-tooltip="${i} is a ${tooltip} method">${i}</li>`;
+const renderItem = (item, tooltip) => {
+  const liElement = document.createElement('li');
+  liElement.dataset.tooltip = `${item} is a ${tooltip} method`;
+  liElement.innerText = item;
+  return liElement;
+};
 
 export default renderItem;
