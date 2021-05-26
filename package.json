@@ -6,6 +6,7 @@
   "scripts": {
     "build:math": "webpack --config webpack-math.config.js",
     "build:array-methods": "webpack --config webpack-array-methods.config.js",
+    "run:array-methods": "webpack --config webpack-array-methods.config.js --watch --mode=development",
     "test": "jest",
     "lint": "eslint ./src",
     "lint:fix": "eslint ./src --fix",
