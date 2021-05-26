@@ -1,26 +1,24 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 // eslint-disable-next-line import/no-extraneous-dependencies
-const CopyPlugin = require('copy-webpack-plugin');
-// eslint-disable-next-line import/no-extraneous-dependencies
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const path = require('path');
 
 module.exports = {
+  context: path.resolve(__dirname, 'src'),
   mode: 'production',
-  entry: './src/array-methods/array-methods.js',
+  entry: './array-methods/array-methods.js',
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist'),
   },
-  plugins: [
-    new HtmlWebpackPlugin({ template: './index.html' }),
-    new CopyPlugin({
-      patterns: [
-        { from: './src/array-methods/*.css', to: './[name][ext]' },
-        { from: './src/tooltip/*.css', to: './[name][ext]' },
-      ],
-    }),
-    new CleanWebpackPlugin(),
-  ],
+  plugins: [new HtmlWebpackPlugin({ template: './index.html' }), new CleanWebpackPlugin()],
+  module: {
+    rules: [
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader'],
+      },
+    ],
+  },
 };

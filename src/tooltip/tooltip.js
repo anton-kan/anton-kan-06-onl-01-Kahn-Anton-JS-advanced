@@ -1,3 +1,5 @@
+import './tooltip.css';
+
 const tooltipElement = document.querySelector('.tooltip');
 
 const toggleTooltip = (event) => {
