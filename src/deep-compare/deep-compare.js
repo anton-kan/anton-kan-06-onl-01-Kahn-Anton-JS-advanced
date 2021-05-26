@@ -11,7 +11,7 @@ const deepCompare = (obj1, obj2) => {
     }
     return Object.keys(obj1).reduce(
       (acc, value) => acc && deepCompare(obj1[value], obj2[value]),
-      true,
+      true
     );
   }
   if (typeof obj1 === 'function') {
