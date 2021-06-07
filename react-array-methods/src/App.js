@@ -1,11 +1,16 @@
 import './App.css';
+import MethodsListsContainer from './MethodsListsContainer';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header"></header>
+      <header className="App-header">
+        <h1>Array Methods</h1>
+      </header>
       <main>
-        <div className="App-container"></div>
+        <div className="App-container">
+          <MethodsListsContainer />
+        </div>
       </main>
     </div>
   );
