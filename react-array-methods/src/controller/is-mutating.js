@@ -1,6 +1,6 @@
 const isMutating = (array, method, args) => {
   const arrayImage = JSON.stringify(array);
-  method.call(array, ...args);
+  array[method](...args);
   return JSON.stringify(array) !== arrayImage;
 };
 
