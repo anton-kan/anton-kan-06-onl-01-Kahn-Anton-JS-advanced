@@ -1,7 +1,7 @@
 import './App.css';
 import MethodsListsContainer from './MethodsListsContainer';
 
-function App() {
+const App = () => {
   return (
     <div className="App">
       <header className="App-header">
@@ -14,6 +14,6 @@ function App() {
       </main>
     </div>
   );
-}
+};
 
 export default App;

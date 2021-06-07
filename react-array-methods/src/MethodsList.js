@@ -1,7 +1,7 @@
 import React from 'react';
 import MethodItem from './MethodItem';
 
-function MethodsList({ title, methods }) {
+const MethodsList = ({ title, methods }) => {
   return (
     <div>
       <h2>{title}</h2>
@@ -12,6 +12,6 @@ function MethodsList({ title, methods }) {
       </ul>
     </div>
   );
-}
+};
 
 export default MethodsList;

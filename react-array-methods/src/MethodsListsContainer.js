@@ -6,7 +6,7 @@ import unknownMethods from './controller/unknown-methods';
 
 import './MethodsListsContainer.css';
 
-function MethodsListsContainer() {
+const MethodsListsContainer = () => {
   return (
     <div className="MethodsListsContainer">
       <MethodsList title="Mutating" methods={mutatingMethods()} />
@@ -14,6 +14,6 @@ function MethodsListsContainer() {
       <MethodsList title="Unknown" methods={unknownMethods()} />
     </div>
   );
-}
+};
 
 export default MethodsListsContainer;

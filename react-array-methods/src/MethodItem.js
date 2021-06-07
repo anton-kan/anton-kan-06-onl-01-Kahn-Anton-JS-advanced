@@ -1,7 +1,7 @@
 import React from 'react';
 
-function MethodItem({ method }) {
+const MethodItem = ({ method }) => {
   return <li>{method}</li>;
-}
+};
 
 export default MethodItem;
