@@ -3,7 +3,7 @@ import MethodItem from './MethodItem';
 
 const MethodsList = ({ title, methods }) => {
   return (
-    <div>
+    <div className="MethodsList">
       <h2>{title}</h2>
       <ul>
         {methods.map((method) => (
