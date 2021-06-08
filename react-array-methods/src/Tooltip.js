@@ -7,10 +7,8 @@ const Tooltip = () => {
   const [display, setDisplay] = useState(false);
 
   const toggleTooltip = (event) => {
-    const x = event.clientX;
-    const y = event.clientY;
-    const targetElement = document.elementFromPoint(x, y);
-    if (targetElement.tagName.toUpperCase() === 'LI') {
+    const targetElement = event?.target?.closest('[data-tooltip]');
+    if (targetElement) {
       setPosition({
         top: `${targetElement.getBoundingClientRect().bottom}px`,
         left: `${targetElement.getBoundingClientRect().left}px`,
