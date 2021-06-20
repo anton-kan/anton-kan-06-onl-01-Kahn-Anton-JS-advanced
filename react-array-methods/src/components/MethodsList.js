@@ -15,7 +15,7 @@ const MethodsList = ({ title, listIndex }) => {
   const list = filter ? methods.filter((method) => method.toLowerCase().includes(filter.toLowerCase())) : methods;
   return (
     <div className="MethodsList">
-      <h2>{title}</h2>
+      <h3>{title}</h3>
       <input type="text" placeholder="Start typing to filter..." value={filter} onChange={changeFilter} />
       <ul>
         {list.map((method) => (

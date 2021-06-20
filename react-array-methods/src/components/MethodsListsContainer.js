@@ -3,20 +3,18 @@ import MethodsList from './MethodsList';
 import Tooltip from './Tooltip';
 import MethodsListsContext from './MethodsListsContext';
 
-import allMethods from '../model/all-methods';
-
 import './MethodsListsContainer.css';
 
-const MethodsListsContainer = () => {
-  const [methodLists, updateMethodLists] = useState([[], allMethods(), []]);
+const MethodsListsContainer = ({ readonly, titles, initialLists }) => {
+  const [methodLists, updateMethodLists] = useState(initialLists);
 
   return (
     <div className="MethodsListsContainer">
       <Tooltip />
-      <MethodsListsContext.Provider value={{ methodLists, updateMethodLists }}>
-        <MethodsList title="Mutating" listIndex="0" />
-        <MethodsList title="All" listIndex="1" />
-        <MethodsList title="Non-mutating" listIndex="2" />
+      <MethodsListsContext.Provider value={{ readonly, methodLists, updateMethodLists }}>
+        {titles.map((item, index) => (
+          <MethodsList title={item} key={item} listIndex={index} />
+        ))}
       </MethodsListsContext.Provider>
     </div>
   );
