@@ -1,10 +1,15 @@
 import { render, screen } from '@testing-library/react';
 import MethodsList from './MethodsList';
+import MethodsListsContext from './MethodsListsContext';
 
 test('renders Methods list', () => {
   const title = 'Test methods list title';
   const methodsList = ['method1', 'method2'];
-  render(<MethodsList title={title} methods={methodsList} />);
+  render(
+    <MethodsListsContext.Provider value={{ methodsList }}>
+      <MethodsList title={title} methodsKey="methodsList" />
+    </MethodsListsContext.Provider>
+  );
 
   const titleElement = screen.getByText(title);
   const methodElements = methodsList.map((method) => screen.getByText(method));

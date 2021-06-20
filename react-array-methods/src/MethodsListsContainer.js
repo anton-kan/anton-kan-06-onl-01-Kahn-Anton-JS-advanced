@@ -1,10 +1,11 @@
 import React from 'react';
 import MethodsList from './MethodsList';
 import Tooltip from './Tooltip';
+import MethodsListsContext from './MethodsListsContext';
 
 import mutatingMethods from './controller/mutating-methods';
 import nonMutatingMethods from './controller/non-mutating-methods';
-import unknownMethods from './controller/unknown-methods';
+import allMethods from './model/all-methods';
 
 import './MethodsListsContainer.css';
 
@@ -12,9 +13,13 @@ const MethodsListsContainer = () => {
   return (
     <div className="MethodsListsContainer">
       <Tooltip />
-      <MethodsList title="Mutating" methods={mutatingMethods()} />
-      <MethodsList title="Non-mutating" methods={nonMutatingMethods()} />
-      <MethodsList title="Unknown" methods={unknownMethods()} />
+      <MethodsListsContext.Provider
+        value={{ mutating: mutatingMethods(), all: allMethods(), nonMutating: nonMutatingMethods() }}
+      >
+        <MethodsList title="Mutating" methodsKey="mutating" />
+        <MethodsList title="All" methodsKey="all" />
+        <MethodsList title="Non-mutating" methodsKey="nonMutating" />
+      </MethodsListsContext.Provider>
     </div>
   );
 };

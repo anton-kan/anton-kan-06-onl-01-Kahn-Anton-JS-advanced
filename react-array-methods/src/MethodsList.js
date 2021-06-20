@@ -1,9 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import MethodItem from './MethodItem';
+import MethodsListsContext from './MethodsListsContext';
 
-const MethodsList = ({ title, methods }) => {
+const MethodsList = ({ title, methodsKey }) => {
   const [filter, setFilter] = useState('');
   const [filteredMethods, setFilteredMethods] = useState([]);
+
+  const methods = useContext(MethodsListsContext)[methodsKey] || [];
 
   const changeFilter = (event) => {
     const newFilter = event?.target?.value;
