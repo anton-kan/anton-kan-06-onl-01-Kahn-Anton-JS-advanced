@@ -3,7 +3,7 @@ import MethodsList from './MethodsList';
 import Tooltip from './Tooltip';
 import MethodsListsContext from './MethodsListsContext';
 
-import allMethods from './model/all-methods';
+import allMethods from '../model/all-methods';
 
 import './MethodsListsContainer.css';
 

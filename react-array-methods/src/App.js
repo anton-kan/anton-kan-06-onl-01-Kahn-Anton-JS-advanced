@@ -1,5 +1,5 @@
 import './App.css';
-import MethodsListsContainer from './MethodsListsContainer';
+import MethodsListsContainer from './components/MethodsListsContainer';
 
 const App = () => {
   return (
