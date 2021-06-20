@@ -3,6 +3,7 @@ const ROUTING_PATHS = {
   game: '/game',
   solution: '/solution',
   reference: '/reference',
+  method: '/reference/:methodName',
 };
 
 export default ROUTING_PATHS;

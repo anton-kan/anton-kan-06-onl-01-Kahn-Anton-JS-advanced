@@ -4,6 +4,7 @@ import ROUTING_PATHS from './helpers/routing_paths';
 import Home from './pages/Home';
 import Game from './pages/Game';
 import Solution from './pages/Solution';
+import Method from './pages/Method';
 import Reference from './pages/Reference';
 import ErrorPage from './pages/ErrorPage';
 
@@ -38,6 +39,7 @@ const App = () => {
               <Route exact path={ROUTING_PATHS.home} component={Home} />
               <Route path={ROUTING_PATHS.game} component={Game} />
               <Route path={ROUTING_PATHS.solution} component={Solution} />
+              <Route path={ROUTING_PATHS.method} component={Method} />
               <Route path={ROUTING_PATHS.reference} component={Reference} />
               <Route path="*" component={ErrorPage} />
             </Switch>
