@@ -6,8 +6,8 @@ test('renders Methods list', () => {
   const title = 'Test methods list title';
   const methodsList = ['method1', 'method2'];
   render(
-    <MethodsListsContext.Provider value={{ methodsList }}>
-      <MethodsList title={title} methodsKey="methodsList" />
+    <MethodsListsContext.Provider value={{ methodLists: [methodsList], updateMethodLists: () => {} }}>
+      <MethodsList title={title} listIndex="0" />
     </MethodsListsContext.Provider>
   );
 
