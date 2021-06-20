@@ -7,6 +7,7 @@ import Solution from './pages/Solution';
 import Method from './pages/Method';
 import Reference from './pages/Reference';
 import ErrorPage from './pages/ErrorPage';
+import Breadcrumbs from './components/Breadcrumbs';
 
 import './App.css';
 
@@ -32,6 +33,7 @@ const App = () => {
               </li>
             </ul>
           </nav>
+          <Breadcrumbs />
         </header>
         <main>
           <div className="App-container">
