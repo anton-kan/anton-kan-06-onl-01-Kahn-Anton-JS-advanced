@@ -8,8 +8,22 @@ import Method from './pages/Method';
 import Reference from './pages/Reference';
 import ErrorPage from './pages/ErrorPage';
 import Breadcrumbs from './components/Breadcrumbs';
+import styled from 'styled-components';
 
 import './App.css';
+
+const activeClassName = 'nav-item-active';
+
+const StyledNavLink = styled(NavLink).attrs({ activeClassName })`
+  font-size: 40px;
+  font-family: 'Raleway';
+  color: rgb(198, 196, 196);
+  font-weight: bold;
+  line-height: 1.2;
+  &.${activeClassName} {
+    color: rgb(143, 119, 119);
+  }
+`;
 
 const App = () => {
   return (
@@ -20,16 +34,18 @@ const App = () => {
           <nav className="App-header-menu">
             <ul>
               <li>
-                <NavLink to={ROUTING_PATHS.home}>Home</NavLink>
+                <StyledNavLink to={ROUTING_PATHS.home} exact>
+                  Home
+                </StyledNavLink>
               </li>
               <li>
-                <NavLink to={ROUTING_PATHS.game}>Game</NavLink>
+                <StyledNavLink to={ROUTING_PATHS.game}>Game</StyledNavLink>
               </li>
               <li>
-                <NavLink to={ROUTING_PATHS.solution}>Solution</NavLink>
+                <StyledNavLink to={ROUTING_PATHS.solution}>Solution</StyledNavLink>
               </li>
               <li>
-                <NavLink to={ROUTING_PATHS.reference}>Reference</NavLink>
+                <StyledNavLink to={ROUTING_PATHS.reference}>Reference</StyledNavLink>
               </li>
             </ul>
           </nav>
