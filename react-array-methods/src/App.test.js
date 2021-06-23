@@ -3,6 +3,9 @@ import App from './App';
 
 test('renders Array Methods header', () => {
   render(<App />);
-  const headerElement = screen.getByText(/Array Methods/i);
-  expect(headerElement).toBeInTheDocument();
+  const headerElements = screen
+    .getAllByText(/Array Methods/i)
+    .filter((element) => element.tagName.toLowerCase() === 'h1');
+  expect(headerElements.length).toBe(1);
+  expect(headerElements[0]).toBeInTheDocument();
 });
