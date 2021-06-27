@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { useLocation } from 'react-router-dom';
 import StyledNavLink from './StyledNavLink';
+import StyledNavSpan from './StyledNavSpan';
 
 const StyledUL = styled.ul`
   list-style: none;
@@ -17,7 +18,11 @@ const Breadcrumbs = () => {
       <StyledNavLink to="/">home</StyledNavLink>
       {crumbs.map((i, index) => (
         <li key={i}>
-          <StyledNavLink to={`/${crumbs.slice(0, index + 1).join('/')}`}>&nbsp;{`> ${i}`}</StyledNavLink>
+          {index < crumbs.length - 1 ? (
+            <StyledNavLink to={`/${crumbs.slice(0, index + 1).join('/')}`}>&nbsp;{`> ${i}`}</StyledNavLink>
+          ) : (
+            <StyledNavSpan>&nbsp;{`> ${i}`}</StyledNavSpan>
+          )}
         </li>
       ))}
     </StyledUL>
