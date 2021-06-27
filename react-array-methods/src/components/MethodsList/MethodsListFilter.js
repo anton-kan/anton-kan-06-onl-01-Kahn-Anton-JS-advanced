@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 
 const FILTER_DELAY = 1000;
@@ -11,7 +11,7 @@ const MethodsListFilter = ({ filterKey }) => {
   const location = useLocation();
 
   const [displayedFilter, setDisplayedFilter] = useState(filter);
-  const [filterTimeout, setFilterTimeout] = useState('');
+  const filterTimeoutRef = useRef(null);
 
   const setFilter = (newFilter) => {
     searchParams.set(filterKey, newFilter);
@@ -25,13 +25,12 @@ const MethodsListFilter = ({ filterKey }) => {
   const changeDisplayedFilter = (event) => {
     const newFilter = event?.target?.value;
     setDisplayedFilter(newFilter);
-    if (filterTimeout) {
-      clearTimeout(filterTimeout);
+    if (filterTimeoutRef.current) {
+      clearTimeout(filterTimeoutRef.current);
     }
-    const newTimeout = setTimeout(() => {
+    filterTimeoutRef.current = setTimeout(() => {
       setFilter(newFilter);
     }, FILTER_DELAY);
-    setFilterTimeout(newTimeout);
   };
 
   return (
