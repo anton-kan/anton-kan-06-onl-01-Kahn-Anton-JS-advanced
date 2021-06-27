@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 
 const FILTER_DELAY = 1000;
@@ -18,6 +18,9 @@ const MethodsListFilter = ({ filterKey }) => {
     location.search = searchParams.toString();
     history.push(location);
   };
+
+  // This is needed for cases when the filter was changed extrenally (for example, by clicking Back button)
+  useEffect(() => setDisplayedFilter(filter), [filter]);
 
   const changeDisplayedFilter = (event) => {
     const newFilter = event?.target?.value;
