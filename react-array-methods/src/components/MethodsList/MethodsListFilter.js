@@ -1,14 +1,25 @@
-import React, { useState, useContext } from 'react';
-import MethodsListFilterContext from './MethodsListFilterContext';
+import React, { useState } from 'react';
+import { useHistory, useLocation } from 'react-router-dom';
 
 const FILTER_DELAY = 1000;
 
-const MethodsListFilter = () => {
-  const { filter, setFilter } = useContext(MethodsListFilterContext);
+const MethodsListFilter = ({ filterKey }) => {
+  const searchParams = new URLSearchParams(useLocation().search);
+  const filter = searchParams.get(filterKey) || '';
+
+  const history = useHistory();
+  const location = useLocation();
+
   const [displayedFilter, setDisplayedFilter] = useState(filter);
   const [filterTimeout, setFilterTimeout] = useState('');
 
-  const changeFilter = (event) => {
+  const setFilter = (newFilter) => {
+    searchParams.set(filterKey, newFilter);
+    location.search = searchParams.toString();
+    history.push(location);
+  };
+
+  const changeDisplayedFilter = (event) => {
     const newFilter = event?.target?.value;
     setDisplayedFilter(newFilter);
     if (filterTimeout) {
@@ -20,7 +31,14 @@ const MethodsListFilter = () => {
     setFilterTimeout(newTimeout);
   };
 
-  return <input type="text" placeholder="Start typing to filter..." value={displayedFilter} onChange={changeFilter} />;
+  return (
+    <input
+      type="text"
+      placeholder="Start typing to filter..."
+      value={displayedFilter}
+      onChange={changeDisplayedFilter}
+    />
+  );
 };
 
 export default MethodsListFilter;
