@@ -1,12 +1,13 @@
-const counterReducer = (state, action) => {
-  switch (action.type) {
-    case 'INIT':
-      return 0;
-    case 'INCREMENT':
-      return state + 1;
-    default:
-      return state || 0;
-  }
-};
+import { createSlice } from '@reduxjs/toolkit';
 
-export default counterReducer;
+export const counter = createSlice({
+  name: 'counter',
+  initialState: 0,
+  reducers: {
+    increment: (state) => state + 1,
+  },
+});
+
+export const { increment } = counter.actions;
+
+export default counter.reducer;

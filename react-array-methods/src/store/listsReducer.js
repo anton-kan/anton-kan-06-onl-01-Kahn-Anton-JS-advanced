@@ -1,14 +1,18 @@
-const listsReducer = (state, action) => {
-  switch (action.type) {
-    case 'INIT':
-      return action.payload;
-    case 'MOVE':
-      state[action.payload.dest] = [...state[action.payload.dest], action.payload.method];
-      state[action.payload.source] = state[action.payload.source].filter((item) => item !== action.payload.method);
-      return { ...state };
-    default:
-      return state || [];
-  }
-};
+import { createSlice } from '@reduxjs/toolkit';
 
-export default listsReducer;
+export const lists = createSlice({
+  name: 'lists',
+  initialState: [],
+  reducers: {
+    init: (state, { payload }) => payload,
+    move: (state, { payload }) => {
+      state[payload.dest] = [...state[payload.dest], payload.method];
+      state[payload.source] = state[payload.source].filter((item) => item !== payload.method);
+      return state;
+    },
+  },
+});
+
+export const { init, move } = lists.actions;
+
+export default lists.reducer;

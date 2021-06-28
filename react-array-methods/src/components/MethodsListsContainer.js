@@ -3,12 +3,13 @@ import { useDispatch } from 'react-redux';
 import MethodsList from './MethodsList';
 import Tooltip from './Tooltip';
 import MethodsListsContext from './MethodsListsContext';
+import { init } from '../store/listsReducer';
 
 import './MethodsListsContainer.css';
 
 const MethodsListsContainer = ({ readonly, withLinks, titles, initialLists }) => {
   const dispatch = useDispatch();
-  dispatch({ type: 'INIT', payload: initialLists });
+  dispatch(init(initialLists));
 
   return (
     <div className="MethodsListsContainer">

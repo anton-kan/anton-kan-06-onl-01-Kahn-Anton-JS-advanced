@@ -2,6 +2,8 @@ import React, { useContext } from 'react';
 import { NavLink, generatePath } from 'react-router-dom';
 import MethodsListsContext from './MethodsListsContext';
 import { useDispatch } from 'react-redux';
+import { increment } from '../store/counterReducer';
+import { move as moveAction } from '../store/listsReducer';
 
 import './MethodItem.css';
 import ROUTING_PATHS from '../helpers/routing_paths';
@@ -13,8 +15,8 @@ const MethodItem = ({ method, listIndex }) => {
   const referencePath = generatePath(ROUTING_PATHS.method, { methodName: method });
 
   const move = (shiftIndex) => {
-    dispatch({ type: 'INCREMENT' });
-    dispatch({ type: 'MOVE', payload: { source: listIndex, dest: +listIndex + shiftIndex, method } });
+    dispatch(increment());
+    dispatch(moveAction({ source: listIndex, dest: +listIndex + shiftIndex, method }));
   };
 
   const moveLeft = () => move(-1);
