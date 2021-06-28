@@ -1,19 +1,19 @@
 import React, { useContext } from 'react';
 import { NavLink, generatePath } from 'react-router-dom';
 import MethodsListsContext from './MethodsListsContext';
+import { useDispatch } from 'react-redux';
 
 import './MethodItem.css';
 import ROUTING_PATHS from '../helpers/routing_paths';
 
 const MethodItem = ({ method, listIndex }) => {
-  const { readonly, withLinks, methodLists, updateMethodLists } = useContext(MethodsListsContext) || [];
+  const { readonly, withLinks } = useContext(MethodsListsContext) || [];
+  const dispatch = useDispatch();
 
   const referencePath = generatePath(ROUTING_PATHS.method, { methodName: method });
 
   const move = (shiftIndex) => {
-    methodLists[+listIndex + shiftIndex].push(method);
-    methodLists[listIndex] = methodLists[listIndex].filter((item) => item !== method);
-    updateMethodLists([...methodLists]);
+    dispatch({ type: 'MOVE', payload: { source: listIndex, dest: +listIndex + shiftIndex, method } });
   };
 
   const moveLeft = () => move(-1);

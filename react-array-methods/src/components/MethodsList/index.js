@@ -1,15 +1,15 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { useLocation } from 'react-router-dom';
 import MethodItem from '../MethodItem';
-import MethodsListsContext from '../MethodsListsContext';
 import MethodsListFilter from './MethodsListFilter';
+import { useSelector } from 'react-redux';
 
 const MethodsList = ({ title, listIndex }) => {
   const filterKey = `${title}Filter`;
 
   const filter = new URLSearchParams(useLocation().search).get(filterKey);
 
-  const methods = useContext(MethodsListsContext).methodLists[+listIndex] || [];
+  const methods = useSelector((state) => state[+listIndex]);
 
   const list = filter ? methods.filter((method) => method.toLowerCase().includes(filter.toLowerCase())) : methods;
   return (

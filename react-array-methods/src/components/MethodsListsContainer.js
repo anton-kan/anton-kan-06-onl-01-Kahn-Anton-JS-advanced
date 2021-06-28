@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Provider, useDispatch } from 'react-redux';
 import MethodsList from './MethodsList';
 import Tooltip from './Tooltip';
 import MethodsListsContext from './MethodsListsContext';
@@ -6,12 +7,13 @@ import MethodsListsContext from './MethodsListsContext';
 import './MethodsListsContainer.css';
 
 const MethodsListsContainer = ({ readonly, withLinks, titles, initialLists }) => {
-  const [methodLists, updateMethodLists] = useState(initialLists);
+  const dispatch = useDispatch();
+  dispatch({ type: 'INIT', payload: initialLists });
 
   return (
     <div className="MethodsListsContainer">
       <Tooltip />
-      <MethodsListsContext.Provider value={{ readonly, withLinks, methodLists, updateMethodLists }}>
+      <MethodsListsContext.Provider value={{ readonly, withLinks }}>
         {titles.map((item, index) => (
           <MethodsList title={item} key={item} listIndex={index} />
         ))}
