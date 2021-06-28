@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Provider, useDispatch } from 'react-redux';
+import React from 'react';
+import { useDispatch } from 'react-redux';
 import MethodsList from './MethodsList';
 import Tooltip from './Tooltip';
 import MethodsListsContext from './MethodsListsContext';
