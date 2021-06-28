@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
-import MethodsList from './MethodsList';
-import MethodsListsContext from './MethodsListsContext';
+import MethodsList from '.';
+import MethodsListsContext from '../MethodsListsContext';
 
 test('renders Methods list', () => {
   const title = 'Test methods list title';

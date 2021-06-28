@@ -7,7 +7,7 @@ const listsReducer = (state, action) => {
       state[action.payload.source] = state[action.payload.source].filter((item) => item !== action.payload.method);
       return { ...state };
     default:
-      return state;
+      return state || [];
   }
 };
 

@@ -13,6 +13,7 @@ const MethodItem = ({ method, listIndex }) => {
   const referencePath = generatePath(ROUTING_PATHS.method, { methodName: method });
 
   const move = (shiftIndex) => {
+    dispatch({ type: 'INCREMENT' });
     dispatch({ type: 'MOVE', payload: { source: listIndex, dest: +listIndex + shiftIndex, method } });
   };
 

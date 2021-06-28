@@ -9,7 +9,7 @@ const MethodsList = ({ title, listIndex }) => {
 
   const filter = new URLSearchParams(useLocation().search).get(filterKey);
 
-  const methods = useSelector((state) => state[+listIndex]);
+  const methods = useSelector((state) => state.lists[+listIndex]);
 
   const list = filter ? methods.filter((method) => method.toLowerCase().includes(filter.toLowerCase())) : methods;
   return (
