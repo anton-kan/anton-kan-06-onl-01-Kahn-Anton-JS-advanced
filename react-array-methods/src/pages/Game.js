@@ -2,17 +2,18 @@ import React from 'react';
 import MethodsListsContainer from '../components/MethodsListsContainer';
 import Counter from '../components/Counter';
 
-import allMethods from '../model/all-methods';
-
 const Game = () => {
-  const titles = ['Mutating', 'All', 'Non-mutating'];
-  const initialLists = [[], allMethods(), []];
+  const lists = [
+    { title: 'Mutating', key: 'userMutating' },
+    { title: 'Source', key: 'userSource' },
+    { title: 'Non-mutating', key: 'userNonMutating' },
+  ];
 
   return (
     <section>
       <h2>The game has started!</h2>
       <Counter />
-      <MethodsListsContainer titles={titles} initialLists={initialLists} />
+      <MethodsListsContainer lists={lists} />
     </section>
   );
 };

@@ -4,12 +4,12 @@ import MethodItem from '../MethodItem';
 import MethodsListFilter from './MethodsListFilter';
 import { useSelector } from 'react-redux';
 
-const MethodsList = ({ title, listIndex }) => {
+const MethodsList = ({ withLinks, title, ownListKey, leftListKey, rightListKey }) => {
   const filterKey = `${title}Filter`;
 
   const filter = new URLSearchParams(useLocation().search).get(filterKey);
 
-  const methods = useSelector((state) => state.lists[+listIndex]);
+  const methods = useSelector((state) => state.lists[ownListKey]);
 
   const list = filter ? methods.filter((method) => method.toLowerCase().includes(filter.toLowerCase())) : methods;
   return (
@@ -18,7 +18,14 @@ const MethodsList = ({ title, listIndex }) => {
       <MethodsListFilter filterKey={filterKey} />
       <ul>
         {list.map((method) => (
-          <MethodItem key={method} method={method} listIndex={listIndex} />
+          <MethodItem
+            withLinks={withLinks}
+            key={method}
+            method={method}
+            ownListKey={ownListKey}
+            leftListKey={leftListKey}
+            rightListKey={rightListKey}
+          />
         ))}
       </ul>
     </div>

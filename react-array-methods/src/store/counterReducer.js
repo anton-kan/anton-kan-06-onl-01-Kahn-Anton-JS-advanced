@@ -1,10 +1,15 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-export const counter = createSlice({
+const counter = createSlice({
   name: 'counter',
-  initialState: 0,
+  initialState: { total: 0, right: 0, wrong: 0 },
   reducers: {
-    increment: (state) => state + 1,
+    increment: (state, { payload }) => {
+      const newState = { ...state };
+      newState.total++;
+      payload.right ? newState.right++ : newState.wrong++;
+      return newState;
+    },
   },
 });
 
