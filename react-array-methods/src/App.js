@@ -9,6 +9,8 @@ import Reference from './pages/Reference';
 import ErrorPage from './pages/ErrorPage';
 import Breadcrumbs from './components/Breadcrumbs';
 import styled from 'styled-components';
+import store from './store';
+import { Provider } from 'react-redux';
 
 import './App.css';
 
@@ -53,14 +55,16 @@ const App = () => {
         </header>
         <main>
           <div className="App-container">
-            <Switch>
-              <Route exact path={ROUTING_PATHS.home} component={Home} />
-              <Route path={ROUTING_PATHS.game} component={Game} />
-              <Route path={ROUTING_PATHS.solution} component={Solution} />
-              <Route path={ROUTING_PATHS.method} component={Method} />
-              <Route path={ROUTING_PATHS.reference} component={Reference} />
-              <Route path="*" component={ErrorPage} />
-            </Switch>
+            <Provider store={store}>
+              <Switch>
+                <Route exact path={ROUTING_PATHS.home} component={Home} />
+                <Route path={ROUTING_PATHS.game} component={Game} />
+                <Route path={ROUTING_PATHS.solution} component={Solution} />
+                <Route path={ROUTING_PATHS.method} component={Method} />
+                <Route path={ROUTING_PATHS.reference} component={Reference} />
+                <Route path="*" component={ErrorPage} />
+              </Switch>
+            </Provider>
           </div>
         </main>
       </div>
