@@ -7,6 +7,7 @@ import StyledNavSpan from './StyledNavSpan';
 const StyledUL = styled.ul`
   list-style: none;
   display: flex;
+  padding: 0;
 `;
 
 const Breadcrumbs = () => {
