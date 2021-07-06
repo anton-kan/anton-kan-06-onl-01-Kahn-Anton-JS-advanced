@@ -1,5 +1,3 @@
-import React from 'react';
-
 import MethodsListsContainer from '../components/MethodsListsContainer';
 import allMethods from '../model/all-methods';
 

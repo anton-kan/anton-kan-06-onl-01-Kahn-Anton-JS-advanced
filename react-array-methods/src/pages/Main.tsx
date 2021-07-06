@@ -1,4 +1,3 @@
-import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 
 import ROUTING_PATHS from '../helpers/routing_paths';

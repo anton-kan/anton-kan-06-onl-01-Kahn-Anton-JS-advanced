@@ -1,8 +1,8 @@
 import React from 'react';
-import MethodsList from './MethodsList';
-import Tooltip from './Tooltip';
+import MethodsList from '../MethodsList';
+import Tooltip from '../Tooltip';
 
-import './MethodsListsContainer.css';
+import './index.css';
 
 const MethodsListsContainer = ({ readonly, withLinks, lists }) => {
   return (

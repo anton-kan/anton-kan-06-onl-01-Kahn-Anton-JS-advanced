@@ -1,4 +1,3 @@
-import React from 'react';
 import MethodsListsContainer from '../components/MethodsListsContainer';
 import mutatingMethods from '../controller/mutating-methods';
 import nonMutatingMethods from '../controller/non-mutating-methods';
@@ -14,7 +13,7 @@ const Solution = () => {
   return (
     <section>
       <h2>Correct solution</h2>
-      <MethodsListsContainer readonly lists={lists} />
+      <MethodsListsContainer readonly withLinks={false} lists={lists} />
     </section>
   );
 };
