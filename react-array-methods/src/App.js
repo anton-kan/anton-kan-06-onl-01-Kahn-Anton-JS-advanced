@@ -3,6 +3,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import { Provider } from 'react-redux';
 
 import Header from './pages/Header';
+import Footer from './pages/Footer';
 import Main from './pages/Main';
 import store from './store';
 
@@ -15,6 +16,7 @@ const App = () => {
         <Router>
           <Header />
           <Main />
+          <Footer />
         </Router>
       </Provider>
     </div>
