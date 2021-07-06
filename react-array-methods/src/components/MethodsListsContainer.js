@@ -16,6 +16,7 @@ const MethodsListsContainer = ({ readonly, withLinks, lists }) => {
           ownListKey={item.key}
           leftListKey={!readonly && index > 0 && lists[index - 1].key}
           rightListKey={!readonly && index < lists.length - 1 && lists[index + 1].key}
+          list={item.list}
         />
       ))}
     </div>
