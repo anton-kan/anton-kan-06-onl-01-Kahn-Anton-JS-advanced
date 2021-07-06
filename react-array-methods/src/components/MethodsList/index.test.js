@@ -3,19 +3,23 @@ import MethodsList from '.';
 import { Router } from 'react-router-dom';
 import { createMemoryHistory } from 'history';
 import { Provider } from 'react-redux';
-import { createStore } from 'redux';
-
-const mockReducer = (state, action) => state;
+import { configureStore } from '@reduxjs/toolkit';
 
 test('renders Methods list', () => {
   const history = createMemoryHistory();
 
   const title = 'Test methods list title';
   const methodsList = ['method1', 'method2'];
+
+  const mockReducer = (state, action) => state || { methods: methodsList };
+  const reducer = { lists: mockReducer };
+
+  const store = configureStore({ reducer });
+
   render(
-    <Provider store={createStore(mockReducer, { lists: [methodsList] })}>
+    <Provider store={store}>
       <Router history={history}>
-        <MethodsList title={title} listIndex="0" />
+        <MethodsList title={title} ownListKey="methods" />
       </Router>
     </Provider>
   );
