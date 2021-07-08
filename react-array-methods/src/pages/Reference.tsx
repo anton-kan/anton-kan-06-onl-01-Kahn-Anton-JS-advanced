@@ -1,5 +1,5 @@
 import MethodsListsContainer from '../components/MethodsListsContainer';
-import IMethodsList from '../components/MethodsListsContainer/IMethodsList';
+import IMethodsList from '../interfaces/IMethodsList';
 import allMethods from '../model/all-methods';
 
 const Reference = () => {

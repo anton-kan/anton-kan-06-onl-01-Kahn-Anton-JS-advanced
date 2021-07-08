@@ -1,5 +1,5 @@
 import { useLocation } from 'react-router-dom';
-import ILists from '../../store/ILists';
+import ILists from '../../interfaces/ILists';
 import MethodItem from '../MethodItem';
 import MethodsListFilter from './MethodsListFilter';
 

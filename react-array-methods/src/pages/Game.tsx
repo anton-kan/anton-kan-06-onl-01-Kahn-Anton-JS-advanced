@@ -1,8 +1,8 @@
 import MethodsListsContainer from '../components/MethodsListsContainer';
 import Counter from '../components/Counter';
 import { useSelector } from 'react-redux';
-import IState from '../store/IState';
-import IMethodsList from '../components/MethodsListsContainer/IMethodsList';
+import IState from '../interfaces/IState';
+import IMethodsList from '../interfaces/IMethodsList';
 
 const Game = () => {
   const lists: IMethodsList[] = [

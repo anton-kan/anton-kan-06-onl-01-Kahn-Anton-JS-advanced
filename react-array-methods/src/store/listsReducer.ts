@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import allMethods from '../model/all-methods';
-import ILists from './ILists';
+import ILists from '../interfaces/ILists';
 
 interface IListsPayload {
   source: keyof ILists;

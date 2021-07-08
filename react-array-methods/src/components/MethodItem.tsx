@@ -5,7 +5,7 @@ import { move as moveAction } from '../store/listsReducer';
 
 import './MethodItem.css';
 import ROUTING_PATHS from '../helpers/routing_paths';
-import ILists from '../store/ILists';
+import ILists from '../interfaces/ILists';
 
 interface IMethodItemProps {
   withLinks?: boolean;

@@ -1,4 +1,4 @@
-import ILists from '../../store/ILists';
+import ILists from './ILists';
 
 interface IMethodsList {
   title: string;

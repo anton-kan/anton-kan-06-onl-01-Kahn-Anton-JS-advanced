@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
 import { useSelector } from 'react-redux';
-import IState from '../store/IState';
-import ICounter from '../store/ICounter';
+import IState from '../interfaces/IState';
+import ICounter from '../interfaces/ICounter';
 
 const FlexDiv = styled.div`
   display: flex;

@@ -1,6 +1,6 @@
 import MethodsList from '../MethodsList';
 import Tooltip from '../Tooltip';
-import IMethodsList from './IMethodsList';
+import IMethodsList from '../../interfaces/IMethodsList';
 
 import './index.css';
 
