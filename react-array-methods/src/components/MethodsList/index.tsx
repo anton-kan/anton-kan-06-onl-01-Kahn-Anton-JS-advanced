@@ -4,7 +4,7 @@ import MethodItem from '../MethodItem';
 import MethodsListFilter from './MethodsListFilter';
 
 interface IMethodsListProps {
-  withLinks: boolean;
+  withLinks?: boolean;
   title: string;
   ownListKey: keyof ILists;
   leftListKey?: keyof ILists;

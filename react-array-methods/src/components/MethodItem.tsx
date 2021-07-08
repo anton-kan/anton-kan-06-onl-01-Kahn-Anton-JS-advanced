@@ -8,7 +8,7 @@ import ROUTING_PATHS from '../helpers/routing_paths';
 import ILists from '../store/ILists';
 
 interface IMethodItemProps {
-  withLinks: boolean;
+  withLinks?: boolean;
   method: string;
   ownListKey: keyof ILists;
   leftListKey?: keyof ILists;
