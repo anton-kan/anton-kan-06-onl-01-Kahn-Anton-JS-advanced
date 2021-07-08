@@ -1,11 +1,14 @@
 import React from 'react';
 import MethodsListsContainer from '../components/MethodsListsContainer';
+import mutatingMethods from '../controller/mutating-methods';
+import nonMutatingMethods from '../controller/non-mutating-methods';
+import unknownMethods from '../controller/unknown-methods';
 
 const Solution = () => {
   const lists = [
-    { title: 'Mutating', key: 'mutating' },
-    { title: 'Unknown', key: 'unknown' },
-    { title: 'Non-mutating', key: 'nonMutating' },
+    { title: 'Mutating', key: 'mutating', list: mutatingMethods() },
+    { title: 'Unknown', key: 'unknown', list: unknownMethods() },
+    { title: 'Non-mutating', key: 'nonMutating', list: nonMutatingMethods() },
   ];
 
   return (

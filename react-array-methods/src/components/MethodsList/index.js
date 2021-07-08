@@ -2,22 +2,19 @@ import React from 'react';
 import { useLocation } from 'react-router-dom';
 import MethodItem from '../MethodItem';
 import MethodsListFilter from './MethodsListFilter';
-import { useSelector } from 'react-redux';
 
-const MethodsList = ({ withLinks, title, ownListKey, leftListKey, rightListKey }) => {
+const MethodsList = ({ withLinks, title, ownListKey, leftListKey, rightListKey, list }) => {
   const filterKey = `${title}Filter`;
 
   const filter = new URLSearchParams(useLocation().search).get(filterKey);
 
-  const methods = useSelector((state) => state.lists[ownListKey]);
-
-  const list = filter ? methods.filter((method) => method.toLowerCase().includes(filter.toLowerCase())) : methods;
+  const filteredList = filter ? list.filter((method) => method.toLowerCase().includes(filter.toLowerCase())) : list;
   return (
     <div className="MethodsList">
       <h3>{title}</h3>
       <MethodsListFilter filterKey={filterKey} />
       <ul>
-        {list.map((method) => (
+        {filteredList.map((method) => (
           <MethodItem
             withLinks={withLinks}
             key={method}
