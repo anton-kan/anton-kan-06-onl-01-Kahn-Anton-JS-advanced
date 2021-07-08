@@ -1,40 +1,45 @@
+const ARRAY_ARGS = [0, 3, 4];
+const FUNCTION_ARGS = [(item: number) => item < 4];
+const NUMBER_ARGS = [3];
+const EMPTY_ARGS: number[] = [];
+
 interface IMethodWithArgs {
   method: string;
-  args: any[];
+  args: number[] | Function[];
 }
 
 const knownMethods = (): IMethodWithArgs[] => [
-  { method: 'concat', args: [['a', 'b', 'c']] },
-  { method: 'copyWithin', args: [0, 3, 4] },
-  { method: 'entries', args: [] },
-  { method: 'every', args: [(item: number) => item < 4] },
-  { method: 'fill', args: [0, 3, 4] },
-  { method: 'filter', args: [(item: number) => item < 4] },
-  { method: 'find', args: [(item: number) => item > 3] },
-  { method: 'findIndex', args: [(item: number) => item > 3] },
-  { method: 'flat', args: [] },
-  { method: 'flatMap', args: [(item: number) => [item, item * 2]] },
-  { method: 'forEach', args: [(item: number) => item * 2] },
-  { method: 'includes', args: [3] },
-  { method: 'indexOf', args: [3] },
-  { method: 'join', args: [] },
-  { method: 'keys', args: [] },
-  { method: 'lastIndexOf', args: [3] },
-  { method: 'map', args: [(item: number) => item * 2] },
-  { method: 'pop', args: [] },
-  { method: 'push', args: [15] },
-  { method: 'reduce', args: [(acc: number, value: number) => acc + value] },
-  { method: 'reduceRight', args: [(acc: number, value: number) => acc + value] },
-  { method: 'reverse', args: [] },
-  { method: 'shift', args: [] },
-  { method: 'slice', args: [2, 4] },
-  { method: 'some', args: [(item: number) => item < 4] },
-  { method: 'sort', args: [] },
-  { method: 'splice', args: [2, 3, 20] },
-  { method: 'toLocaleString', args: ['ru'] },
-  { method: 'toString', args: [] },
-  { method: 'unshift', args: [10] },
-  { method: 'values', args: [] },
+  { method: 'concat', args: ARRAY_ARGS },
+  { method: 'copyWithin', args: ARRAY_ARGS },
+  { method: 'entries', args: EMPTY_ARGS },
+  { method: 'every', args: FUNCTION_ARGS },
+  { method: 'fill', args: ARRAY_ARGS },
+  { method: 'filter', args: FUNCTION_ARGS },
+  { method: 'find', args: FUNCTION_ARGS },
+  { method: 'findIndex', args: FUNCTION_ARGS },
+  { method: 'flat', args: EMPTY_ARGS },
+  { method: 'flatMap', args: FUNCTION_ARGS },
+  { method: 'forEach', args: FUNCTION_ARGS },
+  { method: 'includes', args: NUMBER_ARGS },
+  { method: 'indexOf', args: NUMBER_ARGS },
+  { method: 'join', args: EMPTY_ARGS },
+  { method: 'keys', args: EMPTY_ARGS },
+  { method: 'lastIndexOf', args: NUMBER_ARGS },
+  { method: 'map', args: FUNCTION_ARGS },
+  { method: 'pop', args: EMPTY_ARGS },
+  { method: 'push', args: NUMBER_ARGS },
+  { method: 'reduce', args: FUNCTION_ARGS },
+  { method: 'reduceRight', args: FUNCTION_ARGS },
+  { method: 'reverse', args: EMPTY_ARGS },
+  { method: 'shift', args: EMPTY_ARGS },
+  { method: 'slice', args: ARRAY_ARGS },
+  { method: 'some', args: FUNCTION_ARGS },
+  { method: 'sort', args: EMPTY_ARGS },
+  { method: 'splice', args: ARRAY_ARGS },
+  { method: 'toLocaleString', args: EMPTY_ARGS },
+  { method: 'toString', args: EMPTY_ARGS },
+  { method: 'unshift', args: NUMBER_ARGS },
+  { method: 'values', args: EMPTY_ARGS },
 ];
 
 export default knownMethods;
