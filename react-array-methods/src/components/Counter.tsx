@@ -1,7 +1,8 @@
-import React from 'react';
 import styled from 'styled-components';
 
 import { useSelector } from 'react-redux';
+import IState from '../store/IState';
+import ICounter from '../store/ICounter';
 
 const FlexDiv = styled.div`
   display: flex;
@@ -19,7 +20,7 @@ const StyledH3 = styled.h3`
 `;
 
 const Counter = () => {
-  const counterState = useSelector((state) => state.counter);
+  const counterState = useSelector<IState, ICounter>((state) => state.counter);
   return (
     <FlexDiv>
       <BorderedDiv>

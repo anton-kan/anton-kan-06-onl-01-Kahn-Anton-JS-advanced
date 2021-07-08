@@ -1,8 +1,9 @@
 import MethodsListsContainer from '../components/MethodsListsContainer';
+import IMethodsList from '../components/MethodsListsContainer/IMethodsList';
 import allMethods from '../model/all-methods';
 
 const Reference = () => {
-  const lists = [{ title: 'All methods', key: 'all', list: allMethods() }];
+  const lists: IMethodsList[] = [{ title: 'All methods', key: 'all', list: allMethods() }];
 
   return (
     <section>

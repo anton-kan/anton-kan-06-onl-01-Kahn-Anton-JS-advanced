@@ -12,7 +12,7 @@ const Game = () => {
   ];
 
   const listsState = useSelector((state: IState) => state.lists);
-  lists.forEach((item) => (item.list = listsState[item.key]));
+  lists.forEach((item) => (item.list = listsState[item.key] || []));
 
   return (
     <section>
