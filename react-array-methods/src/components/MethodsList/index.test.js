@@ -9,9 +9,9 @@ test('renders Methods list', () => {
   const history = createMemoryHistory();
 
   const title = 'Test methods list title';
-  const methodsList = ['method1', 'method2'];
+  const list = ['method1', 'method2'];
 
-  const mockReducer = (state, action) => state || { methods: methodsList };
+  const mockReducer = (state, action) => state || {};
   const reducer = { lists: mockReducer };
 
   const store = configureStore({ reducer });
@@ -19,13 +19,13 @@ test('renders Methods list', () => {
   render(
     <Provider store={store}>
       <Router history={history}>
-        <MethodsList title={title} ownListKey="methods" />
+        <MethodsList title={title} ownListKey="methods" list={list} />
       </Router>
     </Provider>
   );
 
   const titleElement = screen.getByText(title);
-  const methodElements = methodsList.map((method) => screen.getByText(method));
+  const methodElements = list.map((method) => screen.getByText(method));
 
   expect(titleElement).toBeInTheDocument();
   methodElements.forEach((element) => expect(element).toBeInTheDocument());

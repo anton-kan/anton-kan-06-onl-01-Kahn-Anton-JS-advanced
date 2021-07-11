@@ -1,9 +1,19 @@
-import React from 'react';
 import { useLocation } from 'react-router-dom';
+import ILists from '../../interfaces/ILists';
 import MethodItem from '../MethodItem';
 import MethodsListFilter from './MethodsListFilter';
 
-const MethodsList = ({ withLinks, title, ownListKey, leftListKey, rightListKey, list }) => {
+interface IMethodsListProps {
+  withLinks?: boolean;
+  title: string;
+  ownListKey: keyof ILists;
+  leftListKey?: keyof ILists;
+  rightListKey?: keyof ILists;
+  list: string[];
+}
+
+const MethodsList = (props: IMethodsListProps) => {
+  const { withLinks, title, ownListKey, leftListKey, rightListKey, list } = props;
   const filterKey = `${title}Filter`;
 
   const filter = new URLSearchParams(useLocation().search).get(filterKey);

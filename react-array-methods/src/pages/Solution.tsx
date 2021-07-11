@@ -1,11 +1,11 @@
-import React from 'react';
 import MethodsListsContainer from '../components/MethodsListsContainer';
+import IMethodsList from '../interfaces/IMethodsList';
 import mutatingMethods from '../controller/mutating-methods';
 import nonMutatingMethods from '../controller/non-mutating-methods';
 import unknownMethods from '../controller/unknown-methods';
 
 const Solution = () => {
-  const lists = [
+  const lists: IMethodsList[] = [
     { title: 'Mutating', key: 'mutating', list: mutatingMethods() },
     { title: 'Unknown', key: 'unknown', list: unknownMethods() },
     { title: 'Non-mutating', key: 'nonMutating', list: nonMutatingMethods() },
@@ -14,7 +14,7 @@ const Solution = () => {
   return (
     <section>
       <h2>Correct solution</h2>
-      <MethodsListsContainer readonly lists={lists} />
+      <MethodsListsContainer readonly withLinks={false} lists={lists} />
     </section>
   );
 };
