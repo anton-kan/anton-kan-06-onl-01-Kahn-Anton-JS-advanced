@@ -1,4 +1,5 @@
 import { Switch, Route, Redirect } from 'react-router-dom';
+import styled from 'styled-components';
 
 import ROUTING_PATHS from '../helpers/routing_paths';
 import Home from './Home';
@@ -8,9 +9,13 @@ import Method from './Method';
 import Reference from './Reference';
 import ErrorPage from './ErrorPage';
 
+const StyledMain = styled.main`
+  flex-grow: 1;
+`;
+
 const Main = () => {
   return (
-    <main>
+    <StyledMain>
       <div className="App-container">
         <Switch>
           <Route path={ROUTING_PATHS.prodStartingPoint}>
@@ -24,7 +29,7 @@ const Main = () => {
           <Route path="*" component={ErrorPage} />
         </Switch>
       </div>
-    </main>
+    </StyledMain>
   );
 };
 

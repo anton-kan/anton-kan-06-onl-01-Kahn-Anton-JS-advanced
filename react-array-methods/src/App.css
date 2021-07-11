@@ -1,5 +1,8 @@
 .App {
   text-align: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .App-header {
@@ -9,6 +12,7 @@
   align-items: center;
   justify-content: center;
   color: white;
+  flex-grow: 0;
 }
 
 .App-header-title {
