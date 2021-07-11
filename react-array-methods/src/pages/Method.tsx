@@ -1,8 +1,11 @@
-import React from 'react';
 import { useParams } from 'react-router-dom';
 
+interface IParamTypes {
+  methodName: string;
+}
+
 const Method = () => {
-  const { methodName } = useParams();
+  const { methodName } = useParams<IParamTypes>();
 
   return (
     <section>
