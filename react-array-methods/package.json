@@ -2,6 +2,7 @@
   "name": "react-array-methods",
   "version": "0.1.0",
   "private": true,
+  "homepage": "/anton-kan-06-onl-01-Kahn-Anton-JS-advanced/react-array-methods/build/",
   "dependencies": {
     "@reduxjs/toolkit": "^1.6.0",
     "@testing-library/jest-dom": "^5.11.4",
