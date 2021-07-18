@@ -4,8 +4,8 @@ import mutatingMethods from './mutating-methods';
 const nonMutatingMethods = () => {
   const mutatingMethodsList = mutatingMethods();
   return knownMethods()
-    .filter((name) => !mutatingMethodsList.includes(name))
-    .map((item) => item.method);
+    .map((item) => item.method)
+    .filter((name) => !mutatingMethodsList.includes(name));
 };
 
 export default nonMutatingMethods;
