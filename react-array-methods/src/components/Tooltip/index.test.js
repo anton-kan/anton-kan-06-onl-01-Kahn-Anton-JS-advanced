@@ -1,5 +1,5 @@
 import { render } from '@testing-library/react';
-import Tooltip from './Tooltip';
+import Tooltip from '.';
 
 test('renders Tooltip', () => {
   const { container } = render(<Tooltip />);

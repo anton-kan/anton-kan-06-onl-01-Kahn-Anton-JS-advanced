@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import MethodItem from './MethodItem';
+import MethodItem from '.';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 
