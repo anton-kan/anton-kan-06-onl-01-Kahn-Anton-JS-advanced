@@ -6,6 +6,7 @@ import { move as moveAction } from '../../store/listsReducer';
 import './index.css';
 import ROUTING_PATHS from '../../helpers/routing_paths';
 import ILists from '../../interfaces/ILists';
+import checkMethod from '../../controller/check-method';
 
 interface IMethodItemProps {
   withLinks?: boolean;
@@ -23,7 +24,7 @@ const MethodItem = (props: IMethodItemProps) => {
 
   const move = (destListKey?: keyof ILists) => {
     if (destListKey) {
-      dispatch(incrementAction({ right: true })); // TODO: Detect if the click was right or wrong
+      dispatch(incrementAction({ right: checkMethod(method, destListKey) }));
       dispatch(moveAction({ source: ownListKey, dest: destListKey, method }));
     }
   };

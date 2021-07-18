@@ -19,6 +19,14 @@ const StyledH3 = styled.h3`
   margin: 0;
 `;
 
+const RightSpan = styled.span`
+  color: green;
+`;
+
+const WrongSpan = styled.span`
+  color: red;
+`;
+
 const Counter = () => {
   const counterState = useSelector<IState, ICounter>((state) => state.counter);
   return (
@@ -26,7 +34,8 @@ const Counter = () => {
       <BorderedDiv>
         <StyledH3>Clicks</StyledH3>
         <div>
-          Total: {counterState.total} Right: {counterState.right} Wrong: {counterState.wrong}
+          Total: {counterState.total} <RightSpan>Right: {counterState.right}</RightSpan>{' '}
+          <WrongSpan>Wrong: {counterState.wrong}</WrongSpan>
         </div>
       </BorderedDiv>
     </FlexDiv>
