@@ -5,6 +5,7 @@ import { reset as resetCounterAction } from '../store/counterReducer';
 import { reset as resetListsAction } from '../store/listsReducer';
 import { reset as resetTimerAction } from '../store/timerReducer';
 import { start as startTimerAction } from '../store/timerReducer';
+import { reset as resetWinAction } from '../store/winReducer';
 import { increment as incrementTimerAction } from '../store/timerReducer';
 import { Dispatch } from '@reduxjs/toolkit';
 
@@ -36,6 +37,7 @@ const WonPopup = (props: IWonPopupProps) => {
 
   if (props.won) {
     const restart = () => {
+      dispatch(resetWinAction());
       dispatch(resetListsAction());
       dispatch(resetCounterAction());
       dispatch(resetTimerAction());

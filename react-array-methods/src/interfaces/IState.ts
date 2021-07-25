@@ -6,6 +6,7 @@ interface IState {
   lists: ILists;
   counter: ICounter;
   timer: ITimer;
+  win: boolean;
 }
 
 export default IState;
