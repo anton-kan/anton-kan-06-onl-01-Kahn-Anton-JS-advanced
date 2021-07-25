@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import './Tooltip.css';
+import './index.css';
 
 const Tooltip = () => {
   const [position, setPosition] = useState({ top: '0px', left: '0px' });
