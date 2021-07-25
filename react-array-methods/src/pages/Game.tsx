@@ -12,7 +12,6 @@ const Game = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    console.log('Game onMount invoked');
     dispatch((dispatch: Dispatch) => {
       const intervalRef = setInterval(() => {
         dispatch(incrementTimer());

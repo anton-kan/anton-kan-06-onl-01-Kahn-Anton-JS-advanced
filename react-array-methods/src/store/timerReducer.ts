@@ -12,12 +12,10 @@ const timer = createSlice({
   initialState,
   reducers: {
     start: (state: ITimer, action: PayloadAction<ITimerPayload>) => {
-      console.log('Start timer action invoked');
       const { intervalRef } = action.payload;
       return { ...state, intervalRef };
     },
     stop: (state: ITimer) => {
-      console.log('Stop timer action invoked', state.intervalRef);
       if (state.intervalRef) {
         clearInterval(state.intervalRef);
       }
