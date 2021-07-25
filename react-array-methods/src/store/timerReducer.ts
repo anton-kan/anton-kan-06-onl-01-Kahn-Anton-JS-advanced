@@ -1,4 +1,4 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { createSlice, Dispatch, PayloadAction } from '@reduxjs/toolkit';
 import ITimer from '../interfaces/ITimer';
 
 interface ITimerPayload {
@@ -11,7 +11,7 @@ const timer = createSlice({
   name: 'timer',
   initialState,
   reducers: {
-    start: (state: ITimer, action: PayloadAction<ITimerPayload>) => {
+    setRef: (state: ITimer, action: PayloadAction<ITimerPayload>) => {
       const { intervalRef } = action.payload;
       return { ...state, intervalRef };
     },
@@ -30,6 +30,13 @@ const timer = createSlice({
   },
 });
 
-export const { increment, reset, start, stop } = timer.actions;
+export const start = (dispatch: Dispatch) => {
+  const intervalRef = setInterval(() => {
+    dispatch(timer.actions.increment());
+  }, 1000);
+  dispatch(timer.actions.setRef({ intervalRef }));
+};
+
+export const { reset, stop } = timer.actions;
 
 export default timer.reducer;

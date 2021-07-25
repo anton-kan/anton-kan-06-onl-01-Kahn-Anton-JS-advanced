@@ -5,19 +5,13 @@ import { useEffect } from 'react';
 import IState from '../interfaces/IState';
 import IMethodsList from '../interfaces/IMethodsList';
 import WonPopup from '../components/WonPopup';
-import { start as startTimer, increment as incrementTimer } from '../store/timerReducer';
-import { Dispatch } from '@reduxjs/toolkit';
+import { start as startTimerThunk } from '../store/timerReducer';
 
 const Game = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch((dispatch: Dispatch) => {
-      const intervalRef = setInterval(() => {
-        dispatch(incrementTimer());
-      }, 1000);
-      dispatch(startTimer({ intervalRef }));
-    });
+    dispatch(startTimerThunk);
   }, [dispatch]);
 
   const lists: IMethodsList[] = [

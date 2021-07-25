@@ -4,10 +4,8 @@ import { useDispatch } from 'react-redux';
 import { reset as resetCounterAction } from '../store/counterReducer';
 import { reset as resetListsAction } from '../store/listsReducer';
 import { reset as resetTimerAction } from '../store/timerReducer';
-import { start as startTimerAction } from '../store/timerReducer';
+import { start as startTimerThunk } from '../store/timerReducer';
 import { reset as resetWinAction } from '../store/winReducer';
-import { increment as incrementTimerAction } from '../store/timerReducer';
-import { Dispatch } from '@reduxjs/toolkit';
 
 interface IWonPopupProps {
   won: boolean;
@@ -41,12 +39,7 @@ const WonPopup = (props: IWonPopupProps) => {
       dispatch(resetListsAction());
       dispatch(resetCounterAction());
       dispatch(resetTimerAction());
-      dispatch((dispatch: Dispatch) => {
-        const intervalRef = setInterval(() => {
-          dispatch(incrementTimerAction());
-        }, 1000);
-        dispatch(startTimerAction({ intervalRef }));
-      });
+      dispatch(startTimerThunk);
     };
 
     return (
