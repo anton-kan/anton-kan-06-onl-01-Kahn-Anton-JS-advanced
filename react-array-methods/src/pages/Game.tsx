@@ -3,8 +3,6 @@ import Counter from '../components/Counter';
 import { useSelector } from 'react-redux';
 import IState from '../interfaces/IState';
 import IMethodsList from '../interfaces/IMethodsList';
-import checkMethodLists from '../controller/check-method-lists';
-import WonPopup from '../components/WonPopup';
 
 const Game = () => {
   const lists: IMethodsList[] = [
@@ -19,7 +17,6 @@ const Game = () => {
   return (
     <section>
       <h2>The game has started!</h2>
-      <WonPopup won={checkMethodLists(listsState)} />
       <Counter />
       <MethodsListsContainer readonly={false} lists={lists} withLinks={false} />
     </section>

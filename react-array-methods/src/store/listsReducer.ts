@@ -24,12 +24,9 @@ const lists = createSlice({
       state[source] = (state[source] || []).filter((item) => item !== method);
       return state;
     },
-    reset: () => {
-      return { ...initialState };
-    },
   },
 });
 
-export const { move, reset } = lists.actions;
+export const { move } = lists.actions;
 
 export default lists.reducer;
