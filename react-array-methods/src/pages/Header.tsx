@@ -31,11 +31,15 @@ const Header = () => {
           <li>
             <StyledNavLink to={ROUTING_PATHS.game}>Game</StyledNavLink>
           </li>
+
           <li>
             <StyledNavLink to={ROUTING_PATHS.solution}>Solution</StyledNavLink>
           </li>
           <li>
             <StyledNavLink to={ROUTING_PATHS.reference}>Reference</StyledNavLink>
+          </li>
+          <li>
+            <StyledNavLink to={ROUTING_PATHS.topScores}>Top Scores</StyledNavLink>
           </li>
         </ul>
       </nav>

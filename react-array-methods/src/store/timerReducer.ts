@@ -30,11 +30,13 @@ const timer = createSlice({
   },
 });
 
-export const start = (dispatch: Dispatch) => {
-  const intervalRef = setInterval(() => {
-    dispatch(timer.actions.increment());
-  }, 1000);
-  dispatch(timer.actions.setRef({ intervalRef }));
+export const start = (dispatch: Dispatch, getState: Function) => {
+  if (!getState().timer.intervalRef) {
+    const intervalRef = setInterval(() => {
+      dispatch(timer.actions.increment());
+    }, 1000);
+    dispatch(timer.actions.setRef({ intervalRef }));
+  }
 };
 
 export const { reset, stop } = timer.actions;

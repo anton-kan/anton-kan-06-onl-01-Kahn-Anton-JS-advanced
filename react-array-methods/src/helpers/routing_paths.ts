@@ -4,6 +4,7 @@ const ROUTING_PATHS = {
   solution: '/solution',
   reference: '/reference',
   method: '/reference/:methodName',
+  topScores: '/top-scores',
   prodStartingPoint: '/anton-kan-06-onl-01-Kahn-Anton-JS-advanced/react-array-methods/build/',
 };
 
