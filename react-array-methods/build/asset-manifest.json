@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/anton-kan-06-onl-01-Kahn-Anton-JS-advanced/react-array-methods/build/static/css/main.e097dbc0.chunk.css",
-    "main.js": "/anton-kan-06-onl-01-Kahn-Anton-JS-advanced/react-array-methods/build/static/js/main.9002a2d4.chunk.js",
-    "main.js.map": "/anton-kan-06-onl-01-Kahn-Anton-JS-advanced/react-array-methods/build/static/js/main.9002a2d4.chunk.js.map",
+    "main.css": "/anton-kan-06-onl-01-Kahn-Anton-JS-advanced/react-array-methods/build/static/css/main.670c8d66.chunk.css",
+    "main.js": "/anton-kan-06-onl-01-Kahn-Anton-JS-advanced/react-array-methods/build/static/js/main.dd6ca407.chunk.js",
+    "main.js.map": "/anton-kan-06-onl-01-Kahn-Anton-JS-advanced/react-array-methods/build/static/js/main.dd6ca407.chunk.js.map",
     "runtime-main.js": "/anton-kan-06-onl-01-Kahn-Anton-JS-advanced/react-array-methods/build/static/js/runtime-main.6ee0f5b7.js",
     "runtime-main.js.map": "/anton-kan-06-onl-01-Kahn-Anton-JS-advanced/react-array-methods/build/static/js/runtime-main.6ee0f5b7.js.map",
-    "static/js/2.b163c034.chunk.js": "/anton-kan-06-onl-01-Kahn-Anton-JS-advanced/react-array-methods/build/static/js/2.b163c034.chunk.js",
-    "static/js/2.b163c034.chunk.js.map": "/anton-kan-06-onl-01-Kahn-Anton-JS-advanced/react-array-methods/build/static/js/2.b163c034.chunk.js.map",
+    "static/js/2.08e4c565.chunk.js": "/anton-kan-06-onl-01-Kahn-Anton-JS-advanced/react-array-methods/build/static/js/2.08e4c565.chunk.js",
+    "static/js/2.08e4c565.chunk.js.map": "/anton-kan-06-onl-01-Kahn-Anton-JS-advanced/react-array-methods/build/static/js/2.08e4c565.chunk.js.map",
     "static/js/3.41dcca9e.chunk.js": "/anton-kan-06-onl-01-Kahn-Anton-JS-advanced/react-array-methods/build/static/js/3.41dcca9e.chunk.js",
     "static/js/3.41dcca9e.chunk.js.map": "/anton-kan-06-onl-01-Kahn-Anton-JS-advanced/react-array-methods/build/static/js/3.41dcca9e.chunk.js.map",
     "index.html": "/anton-kan-06-onl-01-Kahn-Anton-JS-advanced/react-array-methods/build/index.html",
-    "static/css/main.e097dbc0.chunk.css.map": "/anton-kan-06-onl-01-Kahn-Anton-JS-advanced/react-array-methods/build/static/css/main.e097dbc0.chunk.css.map",
-    "static/js/2.b163c034.chunk.js.LICENSE.txt": "/anton-kan-06-onl-01-Kahn-Anton-JS-advanced/react-array-methods/build/static/js/2.b163c034.chunk.js.LICENSE.txt"
+    "static/css/main.670c8d66.chunk.css.map": "/anton-kan-06-onl-01-Kahn-Anton-JS-advanced/react-array-methods/build/static/css/main.670c8d66.chunk.css.map",
+    "static/js/2.08e4c565.chunk.js.LICENSE.txt": "/anton-kan-06-onl-01-Kahn-Anton-JS-advanced/react-array-methods/build/static/js/2.08e4c565.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.6ee0f5b7.js",
-    "static/js/2.b163c034.chunk.js",
-    "static/css/main.e097dbc0.chunk.css",
-    "static/js/main.9002a2d4.chunk.js"
+    "static/js/2.08e4c565.chunk.js",
+    "static/css/main.670c8d66.chunk.css",
+    "static/js/main.dd6ca407.chunk.js"
   ]
 }
