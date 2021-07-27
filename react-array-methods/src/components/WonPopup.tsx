@@ -49,7 +49,13 @@ const WonPopup = (props: IWonPopupProps) => {
 
   if (props.won) {
     const saveScore = () => {
-      addTopScore(name, timerState.value, counterState.total, counterState.right, counterState.wrong);
+      addTopScore({
+        name,
+        time: timerState.value,
+        total: counterState.total,
+        right: counterState.right,
+        wrong: counterState.wrong,
+      });
     };
 
     const restart = () => {

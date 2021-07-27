@@ -8,6 +8,7 @@ import Solution from './Solution';
 import Method from './Method';
 import Reference from './Reference';
 import ErrorPage from './ErrorPage';
+import TopScores from './TopScores';
 
 const StyledMain = styled.main`
   flex-grow: 1;
@@ -26,6 +27,7 @@ const Main = () => {
           <Route path={ROUTING_PATHS.solution} component={Solution} />
           <Route path={ROUTING_PATHS.method} component={Method} />
           <Route path={ROUTING_PATHS.reference} component={Reference} />
+          <Route path={ROUTING_PATHS.topScores} component={TopScores} />
           <Route path="*" component={ErrorPage} />
         </Switch>
       </div>
