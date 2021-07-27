@@ -11,12 +11,13 @@ const StyledTable = styled.table`
 
 const TopScores = () => {
   const topScores = loadTopScores();
+  topScores.sort((a: IScore, b: IScore) => a.time - b.time);
 
   const rows = topScores.map((score: IScore, index: number) => (
     <tr>
       <td>{index + 1}</td>
       <td>{score.name}</td>
-      <td>{score.time}</td>
+      <td>{score.time}s</td>
       <td>{score.total}</td>
       <td>{score.right}</td>
       <td>{score.wrong}</td>
@@ -24,19 +25,22 @@ const TopScores = () => {
   ));
 
   return (
-    <StyledTable>
-      <thead>
-        <tr>
-          <th>#</th>
-          <th>Name</th>
-          <th>Time</th>
-          <th>Total</th>
-          <th>Right</th>
-          <th>Wrong</th>
-        </tr>
-      </thead>
-      <tbody>{rows}</tbody>
-    </StyledTable>
+    <section>
+      <h2>Top Scores ordered by time</h2>
+      <StyledTable>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Time</th>
+            <th>Total</th>
+            <th>Right</th>
+            <th>Wrong</th>
+          </tr>
+        </thead>
+        <tbody>{rows}</tbody>
+      </StyledTable>
+    </section>
   );
 };
 
