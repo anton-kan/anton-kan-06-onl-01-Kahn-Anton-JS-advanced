@@ -14,7 +14,7 @@ const TopScores = () => {
   topScores.sort((a: IScore, b: IScore) => a.time - b.time);
 
   const rows = topScores.map((score: IScore, index: number) => (
-    <tr>
+    <tr key={index}>
       <td>{index + 1}</td>
       <td>{score.name}</td>
       <td>{score.time}s</td>
