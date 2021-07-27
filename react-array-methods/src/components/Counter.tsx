@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { useSelector } from 'react-redux';
 import IState from '../interfaces/IState';
 import ICounter from '../interfaces/ICounter';
+import ITimer from '../interfaces/ITimer';
 
 const FlexDiv = styled.div`
   display: flex;
@@ -29,9 +30,13 @@ const WrongSpan = styled.span`
 
 const Counter = () => {
   const counterState = useSelector<IState, ICounter>((state) => state.counter);
+  const timerState = useSelector<IState, ITimer>((state) => state.timer);
   return (
     <FlexDiv>
       <BorderedDiv>
+        <StyledH3>Time Elapsed: </StyledH3>
+        <div>{timerState.value}s</div>
+
         <StyledH3>Clicks</StyledH3>
         <div>
           Total: {counterState.total} <RightSpan>Right: {counterState.right}</RightSpan>{' '}

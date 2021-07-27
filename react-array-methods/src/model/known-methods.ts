@@ -40,6 +40,7 @@ const knownMethods = (): IMethodWithArgs[] => [
   { method: 'toString', args: EMPTY_ARGS },
   { method: 'unshift', args: NUMBER_ARGS },
   { method: 'values', args: EMPTY_ARGS },
+  { method: 'at', args: NUMBER_ARGS },
 ];
 
 export default knownMethods;
